@@ -1,0 +1,240 @@
+:root {
+    font-family: Inter, Avenir, Helvetica, Arial, sans-serif;
+    font-size: 16px;
+    line-height: 24px;
+    font-weight: 400;
+
+    color: #242424;
+    background-color: rgba(255, 255, 255, 0.87);
+
+    /* own added root color */
+    --black-color: #111;
+    --dark-background: #202024;
+    --light-background: #f6f6f6;
+    --violet: #4f2ee8;
+    --yellow: #eac645;
+    --white: #fff;
+    --ligth-text-color: #b4afaf;
+
+
+    font-synthesis: none;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-text-size-adjust: 100%;
+}
+
+html {
+    box-sizing: border-box;
+}
+
+
+
+body {
+    margin: 0;
+    max-width: 100%;
+    max-height: 100%;
+    min-height: 800px;
+    background-color: var(--light-background);
+    background-size: cover;
+    /* overflow-y: visible; */
+
+}
+
+ul {
+    list-style: none;
+}
+
+/* section {
+   height: 100%;
+    background-color: var(--light-background);
+} */
+
+img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+.slist-container {
+    padding-left: 20px;
+    padding-right: 20px;
+    margin: 0;
+}
+
+
+.demo-header {
+    display: block;
+    background-color: var(--white);
+    min-width: 320px;
+    height: 64px;
+    border: 1px solid black;
+
+}
+
+.is-hidden {
+    opacity: 0;
+    visibility: hiiden;
+    position: fixed;
+
+}
+
+@media screen and (min-width: 320px) {
+    .container {
+        width: 375px;
+        /* margin-left: auto;
+        margin-right: auto; */
+    }
+
+    .slist-header {
+        display: inline-block;
+        margin-top: 40px;
+        margin-bottom: 40px;
+        font-family: "DM Sans", sans-serif;
+        font-weight: 700;
+        font-size: 32px;
+        line-height: 1.1875;
+        letter-spacing: -0.04em;
+        color: var(--black-color);
+    }
+
+    .slist-header-span {
+        color: var(--violet);
+    }
+
+    .slist-demo-thumb {
+        margin: 120px auto 0 auto;
+        width: 265px;
+        height: 248px;
+    }
+
+    .slist-demo-text {
+        display: inline-block;
+        margin-top: 0;
+        margin-bottom: 14px;
+        margin-left: auto;
+        margin-right: auto;
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 1.28571;
+        letter-spacing: -0.02em;
+        text-align: center;
+        color: rgba(0, 0, 0, 0.6);
+    }
+
+    /* book card*/
+
+    .slist-card-section {
+        margin-left: 20px;
+        margin-right: 20px;
+        display: block;
+
+    }
+
+    .slist-card-list {
+        display: block;
+        position: relative;
+        margin-right: auto;
+        margin-left: auto;
+        margin-top: 0px;
+        margin-bottom: 20px;
+        border: 2px solid rgba(79, 46, 232, 0.4);
+        border-radius: 16px;
+        padding: 14px 14px;
+        max-width: 335px;
+        height: 170px;
+        background-color: var(--white);
+    }
+
+    .slist-del-btn {
+        position: absolute;
+        top: 14px;
+        right: 14px;
+    }
+
+    .slist-card-item {
+        display: flex;
+        gap: 14px;
+    }
+
+    .slist-card-picture {
+        border-radius: 8px;
+        width: 100px;
+        height: 142px;
+    }
+
+    .slist-info-container {
+        display: flex;
+        flex-direction: column;
+        flex-wrap: nowrap;
+        align-items: flex-start;
+    }
+
+    .slist-book-header {
+        /* display: inline-block; */
+        max-width: 144px;
+        margin-bottom: 4px;
+        height: 18px;
+        margin-top: 0;
+        font-family: "DM Sans", sans-serif;
+        font-weight: 700;
+        font-size: 16px;
+        line-height: 1.125;
+        letter-spacing: -0.04em;
+        text-transform: uppercase;
+        color: var(--black-color);
+
+    }
+
+    .slist-book-category {
+        /* display: inline-block; */
+        max-width: 165px;
+        height: 14px;
+        margin-bottom: 8px;
+        font-family: "DM Sans", sans-serif;
+        font-weight: 400;
+        font-size: 12px;
+        line-height: 1.16667;
+        letter-spacing: 0.03em;
+        color: var(--ligth-text-color);
+    }
+
+    .slist-book-description {
+        display: block;
+        margin-top: 0;
+        margin-bottom: 16px;
+        max-width: 193px;
+        height: 68px;
+        font-family: "DM Sans", sans-serif;
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 1.28571;
+        letter-spacing: -0.04em;
+        color: var(--black-color);
+    }
+
+
+
+    .slist-book-autor {
+        display: inline-block;
+        font-family: "DM Sans", sans-serif;
+        font-style: italic;
+        font-weight: 400;
+        font-size: 12px;
+        line-height: 1.16667;
+        letter-spacing: -0.04em;
+        color: var(--ligth-text-color);
+    }
+
+    .slist-nav {
+        position: absolute;
+        bottom: 14px;
+        right: 14px;
+    }
+
+    .slist-nav-list {
+        display: flex;
+        gap: 3px;
+    }
+
+}
