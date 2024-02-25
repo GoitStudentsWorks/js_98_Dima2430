@@ -15,6 +15,7 @@
 @import url('./sidebar.css');
 @import url('./themesToggle.css');
 @import url('./categories.css');
+@import url('./home.css');
 body {
   font-family: 'DM Sans', sans-serif;
   margin: 0;
