@@ -1,36 +1,51 @@
 <header class="header">
-    <div class="container header-container">
-        <div class="logo">
-        <a class="header-logo" href="./index.html"
-        ><img src="" alt="logo" width="24" height="24" />
-        <span>Bookshelf</span>
+  <div class="container header-container">
+    <nav class="header-naviganion">
+      <a class="header-logo" href="">
+        <svg class="logo-icon" width="24" height="24">
+          <use href="../img/logo.svg#clip0_4313_467"></use>
+        </svg>
+        <svg class="logo-text-icon" width="77" height="13">
+          <use href=""></use>
+        </svg>
       </a>
+      <ul class="header-menu">
+        <li class="header-item">
+          <a class="header-menu-link exception" href="./index.html">Home</a>
+        </li>
+        <li class="header-item">
+          <a class="header-menu-link" href="./shoppingList.html"> Shopping List
+            <svg class="basket-icon" width="20" height="20">
+              <use href="../img/lock-02.svg"></use>
+            </svg>
+          </a>
+        </li>
+      </ul>
+    </nav>
+    <div class="box-btn">
+      <div class="theme-switch">
+        <input class="theme-switch-input" type="checkbox" id="checkbox">
+        <label class="theme-toggle" for="checkbox"></label>
+        <div class="slider"></div>
       </div>
-        <nav class="header-navigator">
-            <ul class="header-menu">
-                <li class="header-menu-item">
-                  <a class="header-menu-link" href="#home-id">HOME</a>
-                </li>
-                <li class="header-menu-item">
-                 <a class="header-menu-link" href="#shopping list-id">SHOPPING LIST</a>
-                </li>
-                </ul> 
-                <div class="checkbox-container">
-                  <input type="checkbox" id="toggle">
-                  <label for="toggle"></label>
-                </div>
-                <!-- <-------Authorization------ > -->
-                 <button type="button" class="signup-btn">
-                  Sign up
-                  <svg class="sign-arrow" width="20" height="20">
-                    <use href=""></use>        
-                    </svg>
-                </button>
-                </nav>
-            </div>
-           </header>    
-           
-      
+
+      <button type="button" class="menu-open-btn">
+        <svg class="menu-open-icon" width="28" height="28">
+          <use href=""></use>
+        </svg>
+      </button>
+      <!-- -------Authorization------ >  -->
+      <button type="button" class="signup-btn">
+        Sign up
+        <svg class="sign-arrow" width="20" height="20">
+          <use href=""></use>        
+          </svg>
+      </button>
+    </div>
+  </div>
+ 
+</header>
+
 
     
           
