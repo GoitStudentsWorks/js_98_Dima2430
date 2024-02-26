@@ -4,8 +4,8 @@
     line-height: 24px;
     font-weight: 400;
 
-    color: #242424;
-    background-color: rgba(255, 255, 255, 0.87);
+    /* color: #242424;
+    background-color: rgba(255, 255, 255, 0.87); */
 
     /* own added root color */
     --black-color: #111;
@@ -17,38 +17,20 @@
     --ligth-text-color: #b4afaf;
 
 
-    font-synthesis: none;
+    /* font-synthesis: none;
     text-rendering: optimizeLegibility;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    -webkit-text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%; */
 }
 
 html {
     box-sizing: border-box;
 }
 
-
-
-body {
-    margin: 0;
-    max-width: 100%;
-    max-height: 100%;
-    min-height: 800px;
-    background-color: var(--light-background);
-    background-size: cover;
-    /* overflow-y: visible; */
-
-}
-
 ul {
     list-style: none;
 }
-
-/* section {
-   height: 100%;
-    background-color: var(--light-background);
-} */
 
 img {
     display: block;
@@ -56,12 +38,12 @@ img {
     height: auto;
 }
 
-.slist-container {
-    padding-left: 20px;
-    padding-right: 20px;
-    margin: 0;
+/* body {
+    background-color: var(--yellow);
+} */
+.slist-section {
+    background-color: var(--light-background);
 }
-
 
 .demo-header {
     display: block;
@@ -79,21 +61,25 @@ img {
 
 }
 
-@media screen and (min-width: 320px) {
-    .container {
+@media screen and (min-width: 375px) {
+    .slist-container {
+        padding-bottom: 40px;
         width: 375px;
-        /* margin-left: auto;
-        margin-right: auto; */
+        /* padding-left: 20px;
+    padding-right: 20px; */
+
+
     }
 
     .slist-header {
         display: inline-block;
         margin-top: 40px;
         margin-bottom: 40px;
+        margin-left: 20px;
         font-family: "DM Sans", sans-serif;
         font-weight: 700;
         font-size: 32px;
-        line-height: 1.1875;
+        line-height: 38px;
         letter-spacing: -0.04em;
         color: var(--black-color);
     }
@@ -102,8 +88,9 @@ img {
         color: var(--violet);
     }
 
+
     .slist-demo-thumb {
-        margin: 120px auto 0 auto;
+        margin: 80px auto 0 auto;
         width: 265px;
         height: 248px;
     }
@@ -122,45 +109,63 @@ img {
         color: rgba(0, 0, 0, 0.6);
     }
 
+
+
+
+
     /* book card*/
 
-    .slist-card-section {
-        margin-left: 20px;
-        margin-right: 20px;
-        display: block;
 
-    }
-
-    .slist-card-list {
+    .slist-card-item {
         display: block;
         position: relative;
-        margin-right: auto;
-        margin-left: auto;
-        margin-top: 0px;
+        box-sizing: border-box;
+        margin-left: 20px;
+        margin-right: 20px;
         margin-bottom: 20px;
         border: 2px solid rgba(79, 46, 232, 0.4);
         border-radius: 16px;
-        padding: 14px 14px;
-        max-width: 335px;
+        padding: 14px;
+        width: 335px;
         height: 170px;
-        background-color: var(--white);
+        background-color: #fff;
     }
+
+
 
     .slist-del-btn {
         position: absolute;
         top: 14px;
         right: 14px;
+        width: 28px;
+        height: 28px;
+        border-radius: 50%;
+        background-color: #4f2ee8;
+    }
+
+    .slist-del-btn-img {
+        width: 16px;
+        height: 16px;
+
     }
 
     .slist-card-item {
         display: flex;
         gap: 14px;
+        margin-top:
     }
 
     .slist-card-picture {
         border-radius: 8px;
         width: 100px;
         height: 142px;
+    }
+
+    .slist-book-img {
+        width: 100px;
+        height: 142px;
+        border-radius: 8px;
+        background-color: #eac645;
     }
 
     .slist-info-container {
@@ -200,7 +205,10 @@ img {
     }
 
     .slist-book-description {
-        display: block;
+        display: -webkit-box;
+        -webkit-line-clamp: 3;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
         margin-top: 0;
         margin-bottom: 16px;
         max-width: 193px;
@@ -226,15 +234,238 @@ img {
         color: var(--ligth-text-color);
     }
 
-    .slist-nav {
+
+    .slist-nav-list {
         position: absolute;
         bottom: 14px;
         right: 14px;
+        display: flex;
+        align-items: center;
+        gap: 3px;
+        padding: 0;
+        margin: 0;
+
     }
 
-    .slist-nav-list {
-        display: flex;
-        gap: 3px;
+    .img-amazone {
+        width: 32px;
+        height: 11px;
     }
+
+    .img-app {
+        width: 16px;
+        height: 16px;
+    }
+
+}
+
+
+
+@media screen and (min-width: 768px) {
+
+    .slist-container {
+        width: 768px;
+        /* padding-left: 32px;
+    padding-right: 32px; */
+        padding-bottom: 40px;
+
+    }
+
+    .slist-header {
+        display: inline-block;
+        margin-top: 40px;
+        margin-bottom: 40px;
+        margin-left: 32px;
+        font-family: "DM Sans", sans-serif;
+        font-weight: 700;
+        font-size: 48px;
+        line-height: 38px;
+        letter-spacing: -0.04em;
+        color: var(--black-color);
+    }
+
+    .slist-demo-thumb {
+        margin: 80px auto 0 auto;
+        width: 349px;
+        height: 309px;
+    }
+
+    .slist-demo-text {
+        display: inline-block;
+        margin-top: 0;
+        margin-bottom: 14px;
+        margin-left: auto;
+        margin-right: auto;
+        font-weight: 400;
+        font-size: 18px;
+        line-height: 1.28571;
+        letter-spacing: -0.02em;
+        text-align: center;
+        color: rgba(0, 0, 0, 0.6);
+    }
+
+
+    /* book card*/
+
+
+    .slist-card-item {
+        margin-left: 32px;
+        margin-right: 32px;
+        padding: 30px 24px;
+        width: 704px;
+        height: 213px;
+
+    }
+
+    .slist-del-btn {
+        position: absolute;
+        top: 24px;
+        right: 24px;
+        width: 34px;
+        height: 34px;
+
+    }
+
+    .slist-del-btn-img {
+        width: 16px;
+        height: 16px;
+
+    }
+
+    .slist-card-item {
+        display: flex;
+        gap: 20px;
+    }
+
+    .slist-card-picture {
+        border-radius: 8px;
+        width: 116px;
+        height: 165px;
+    }
+
+    .slist-book-img {
+        width: 100%;
+        object-fit: cover;
+
+    }
+
+
+    .slist-book-header {
+
+        max-width: 400px;
+        text-transform: uppercase;
+
+    }
+
+    .slist-book-category {
+
+        max-width: 400px;
+        height: 14px;
+        margin-bottom: 14px;
+    }
+
+    .slist-book-description {
+
+        margin-bottom: 48px;
+        max-width: 500px;
+
+    }
+
+
+    .slist-nav-list {
+        position: absolute;
+        bottom: 24px;
+        right: 24px;
+        display: flex;
+        gap: 16px;
+        padding: 0;
+        margin: 0;
+    }
+
+    .img-amazone {
+        width: 48px;
+        height: 15px;
+    }
+
+    .img-app {
+        width: 28px;
+        height: 27px;
+    }
+
+
+}
+
+
+@media screen and (min-width: 1440px) {
+
+    .slist-container {
+        width: 1440px;
+        /* padding-left: 32px;
+    padding-right: 32px; */
+        padding-bottom: 40px;
+
+    }
+
+    .slist-header {
+        display: inline-block;
+        margin-top: 40px;
+        margin-bottom: 40px;
+        margin-left: 420px;
+
+    }
+
+    .slist-demo-thumb {
+        margin-top: 100px;
+        margin-bottom: auto;
+        margin-left: 735px;
+        width: 349px;
+        height: 309px;
+    }
+
+
+    /* book card*/
+
+
+    .slist-card-item {
+        margin-left: 420px;
+        margin-right: 24px;
+        padding: 24px 24px;
+        width: 996px;
+        height: 213px;
+
+    }
+
+
+    .slist-del-btn-img {
+        width: 16px;
+        height: 16px;
+
+    }
+
+
+    .slist-book-header {
+
+        font-size: 18px;
+        max-width: 700px;
+        text-transform: uppercase;
+
+    }
+
+    .slist-book-category {
+
+        max-width: 700px;
+        height: 14px;
+
+    }
+
+    .slist-book-description {
+
+        margin-bottom: 48px;
+        max-width: 500px;
+
+    }
+
+
+
 
 }

@@ -1,8 +1,6 @@
+
 const slistGalleryEl = document.querySelector('.slist-card-section');
-    
-
-
-
+const background = document.querySelector('.slist-demo-thumb');
 
 let key;                  //ключ
 let arrOfBooks = [];       // збираємо данні localStorage в масив  
@@ -32,40 +30,43 @@ renderImages(arrOfBooks);     //рендеримо розмітку
 
 
 function imageTemplate({ id, book_image,title,list_name,description,author,amazonURL,appleURL}) {
-  return `<ul class="slist-card-list">
-           <button type="button" data-id=${id} class="slist-del-btn js-slist-del-btn">
-             del
-         </button>
-          <li class="slist-card-item">
-           <div class="slist-card-picture">
-             <img src="${book_image}" alt="books" />
-             </div>
-             <div class="slist-info-container">
-               <h3 class="slist-book-header">${title}</h3>
-               <div class="slist-book-category">${list_name}</div>
-               <p class="slist-book-description">${description}</p>
-               <div class="slist-book-autor">${author} Autor</div>
+  return `<div class="slist-card-list">
+            <div class="slist-card-item">
+              <button type="button" data-id=${id} class="slist-del-btn js-slist-del-btn">
+                <svg class="slist-del-btn-img">
+                  <use href="./img/javascript.svg#trash"></use>
+                </svg>
+              </button>
+              <div class="slist-card-picture">
+                <img src="${book_image}" class="slist-book-img" alt="books" />
+              </div>
+              <div class="slist-info-container">
+                <h3 class="slist-book-header">${title}</h3>
+                <div class="slist-book-category">${list_name}</div>
+                <p class="slist-book-description">${description}</p>
+                <div class="slist-book-autor">${author}</div>
 
-               <nav class="slist-nav">
-                 <ul class="slist-nav-list">
-                   <li class="slist-nav-item">
-                     <button type="button" class="slist-nav-link">
-                       amazone
-                       <a href= ${amazonURL} class="slist-nav-link"></a>
-                     </button>
-                   </li>
+                <div class="slist-nav">
+                  <ul class="slist-nav-list">
+                    <li class="slist-nav-item">
+                      <a href="${amazonURL}" class="slist-nav-link">
+                      <svg class="img-amazone">
+            <use href="../img/icons.svg#icon-amazon-pay"></use>
+          </svg></a>
+                    </li>
 
-                   <li class="slist-nav-item">
-                     <button type="button" class="slist-nav-link">
-                       app
-                       <a href=${appleURL} class="slist-nav-link"></a>
-                     </button>
-                   </li>
-                 </ul>
-               </nav>
-             </div>
-           </li>
-         </ul>`};
+                    <li class="slist-nav-item">
+                      <a href="${appleURL}" class="slist-nav-link"><img class="img-app" src="./img/ap.png" alt="app"></a>
+                      
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>`};
+
+
+
 
 function imagesTemplate(array) {
     return array.map(imageTemplate).join('');
