@@ -92,6 +92,7 @@ svg:hover path {
     display: flex;
     gap: 20px;
     align-items: center;
+    margin-top: 16px;
 }
 .logo{
     transition: filter 0.3s ease; 
