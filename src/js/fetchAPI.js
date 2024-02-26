@@ -24,17 +24,20 @@ function createCategoryBooksMarkup({ list_name, books }) {
   return `
     <li class="book-category-item">
       <p class="book-category">${list_name}</p>
-      <ul class="top-books bestsel-books js-list-rendering">
+      <ul class="top-books">
         ${books
           .map(book => {
             return `
               <li class="book-card" data-id="${book._id}">
-              <div class="book-thumb">
+              <div class="book-card-hover">
                 <img class="book-cover" src="${book.book_image}" alt="${book.title}"/>
-                </div>
                 <div class="book-descr">
                 <h2 class="book-name">${book.title}</h2>
                 <h3 class="book-author">${book.author}</h3>
+                </div>
+                <div class="view-more">
+                <p class="view-more-text">Click for view more information and buy it</p>
+                </div>
                 </div>
               </li>
             `;
@@ -52,7 +55,7 @@ async function renderBooksCategory() {
   for (let category of topBooks) {
     booksCategories += createCategoryBooksMarkup(category);
   }
-  const categoriesList = `<ul class="top-books">${booksCategories}</ul>`;
+  const categoriesList = `<ul class="top-books-all">${booksCategories}</ul>`;
   const booksHomePage = ` <h1 class="collection-title">Best Sellers <span>Books</span></h1>${categoriesList}`;
   bestBooksGallery.innerHTML = booksHomePage;
 }
