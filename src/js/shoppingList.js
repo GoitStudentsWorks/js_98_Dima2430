@@ -73,6 +73,9 @@ function imagesTemplate(array) {
 };
 
 function renderImages(array) {
+   if (localStorage.length === 0) {
+    showbackground(); 
+    }
     const markup = imagesTemplate(array);
   slistGalleryEl.innerHTML = markup;
  
@@ -99,5 +102,15 @@ function renderImages(array) {
     
   };
 
+
+};
+
+function hidebackground() {
+    background.classList.add('is-hidden');
+};
+
+
+function showbackground() {
+  background.classList.remove('is-hidden');
 
 };
