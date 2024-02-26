@@ -51,7 +51,7 @@ function imageTemplate({ id, book_image,title,list_name,description,author,amazo
                     <li class="slist-nav-item">
                       <a href="${amazonURL}" class="slist-nav-link">
                       <svg class="img-amazone">
-            <use href="../img/icons.svg#icon-amazon-pay"></use>
+            <use href="./img/icons.svg#icon-amazon-pay"></use>
           </svg></a>
                     </li>
 
