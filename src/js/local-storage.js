@@ -15,16 +15,16 @@ let STORAGE_KEY;
 //     appleURL: "https://goto.applebooks.apple/9781543661385?at=10lIEQ",
 // };
 
-//    const addedBook2 = {
-//     id: "643282b1e85766588626a080",
-//     book_image: "https://storage.googleapis.com/du-prd/books/images/9781982185824.jpg",
-//     author: "Harlan Coben",
-//     list_name: "Audio Fiction",
-//     description: "",
-//     title: "FIND YOU",
-//     amazonURL: "https://www.amazon.com/dp/1538748363?tag=NYTBSREV-20",
-//     appleURL: "https://goto.applebooks.apple/9781543661385?at=10lIEQ",
-//     };
+   const addedBook2 = {
+    id: "643282b1e85766588626a080",
+    book_image: "https://storage.googleapis.com/du-prd/books/images/9781982185824.jpg",
+    author: "Harlan Coben",
+    list_name: "Audio Fiction",
+    description: "",
+    title: "FIND YOU",
+    amazonURL: "https://www.amazon.com/dp/1538748363?tag=NYTBSREV-20",
+    appleURL: "https://goto.applebooks.apple/9781543661385?at=10lIEQ",
+    };
 
 
 function saveToLS(STORAGE_KEY, value) {
@@ -39,3 +39,4 @@ function onAddBtnClick() {
     STORAGE_KEY = addedBook1.id;     // дістаємо id з форми
     saveToLS(STORAGE_KEY, addedBook1);
 };
+
