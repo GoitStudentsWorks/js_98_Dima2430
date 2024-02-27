@@ -6,7 +6,7 @@
     width: 100%;
     height: 100%;
     background-color: rgba(0, 0, 0, 0.5);
-    
+    z-index: 200;
 }
 .modal-content {
     border: 2px solid #111111;
@@ -88,7 +88,7 @@
     cursor: pointer;
     position: relative;
     color: #111111;
-    top:-650px;
+    top:-644px;
     right: -14px;
     width:24px;
     height:24px;
@@ -100,7 +100,7 @@
 svg:hover path {
     stroke: #4F2EE8; 
 }
-.button{
+.button_mod{
     font-family: var(--font-family);
     font-weight: 700;
     font-size: 14px;
@@ -111,7 +111,7 @@ svg:hover path {
     background-color: #ffffff;
 
     border-radius: 40px;
-    padding: 14px auto;
+    padding: 14px 16px;
     min-width: 211px;
     height: 46px;
 
@@ -119,9 +119,13 @@ svg:hover path {
     border: 3px solid #4F2EE8;
     cursor: pointer;
     transition: background-color 0.3s, color 0.3s;
+   
+    display: flex;
+    align-items: center;
+    justify-content: center; 
 
 }
-.button:hover, .button:focus{
+.button_mod:hover, .button_mod:focus{
     color:#ffffff;
     background: #4F2EE8;
 }
@@ -132,6 +136,7 @@ svg:hover path {
    justify-content: center; 
    margin-top: 40px;
    margin-bottom: 8px;
+
 }
 .notification{
     font-family: var(--font-family);
@@ -202,17 +207,26 @@ svg:hover path {
         width:28px;
         height:28px;
     }
-    .button{
-        padding: 20px auto;
+    .button_mod{
+        padding:20px auto; 
         width: 499px;
         height: 64px;
+        font-size: 18px;
+        line-height: 133%;
     }
 
     .button_place{
        margin-top: 40px;
        margin-bottom: 8px;
+       
     }
     .notification{
-        width: 310px;
+        width: 320px;
     }
+}
+.test{
+    position: fixed;    
+    top: 100px;
+    right: 0;
+    border: 1px solid red;
 }

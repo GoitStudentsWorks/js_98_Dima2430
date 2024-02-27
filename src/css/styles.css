@@ -7,6 +7,7 @@
 @import url('./reset.css');
 @import url('./header.css');
 @import url('./firebase.css');
+@import url('./modal_wind.css');
 @import url('./loader.css');
 @import url('./menu.css');
 @import url('./pagination.css');
@@ -24,7 +25,7 @@ body {
   color: #111111;
 }
 .container {
-  width: 375px;
+  /* width: 375px; */
   margin: 0 auto;
   padding: 0 20px;
 }

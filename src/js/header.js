@@ -28,6 +28,27 @@ if (savedTheme === 'dark') {
 // Додавання події для перемикання теми
 themeSwitch.addEventListener('change', toggleTheme);
 
+themeSwitch.addEventListener('click', toggleTheme);
+
+// Функція для зміни кольору шрифтів
+function toggleFontColor() {
+  const body = document.querySelector('body');
+  
+  if (body.classList.contains('dark-theme')) {
+      body.style.color = 'white'; // Змінюємо колір шрифтів для темної теми
+  } else {
+      body.style.color = 'black'; // Змінюємо колір шрифтів для світлої теми
+  }
+}
+
+// Викликаємо функцію при завантаженні сторінки
+toggleFontColor();
+
+// Додавання подій для зміни кольору шрифтів при зміні теми
+themeSwitch.addEventListener('change', toggleFontColor);
+themeSwitch.addEventListener('click', toggleFontColor);
+
+
 // функція додавання та видалення класу
 
   const menu = document.querySelector('.header-menu');
@@ -44,7 +65,6 @@ themeSwitch.addEventListener('change', toggleTheme);
     }
   });
  
-
 // Відкриття меню при кліку на кнопку відкриття
   menuOpenButton.addEventListener('click', () => {
   mobMenu.classList.add('is-open');
@@ -58,4 +78,7 @@ themeSwitch.addEventListener('change', toggleTheme);
   mobMenu.classList.remove('is-open');
   menuOpenButton.classList.remove('hidden');
   menuCloseButton.classList.add('hidden');
+
 });
+
+
