@@ -1,5 +1,7 @@
 const themeSwitch = document.querySelector('.theme-switch-input');
 const body = document.querySelector('body');
+const menuOpenButton = document.querySelector('.menu-open-btn');
+const menuCloseButton = document.querySelector('.menu-close-btn');
 
 // Функція для зміни теми та збереження її в локальному сховищі
 function toggleTheme() {
@@ -41,3 +43,19 @@ themeSwitch.addEventListener('change', toggleTheme);
       event.target.classList.add('exception');
     }
   });
+ 
+
+// Відкриття меню при кліку на кнопку відкриття
+  menuOpenButton.addEventListener('click', () => {
+  mobMenu.classList.add('is-open');
+  menuOpenButton.classList.remove('is-open')
+  menuOpenButton.classList.add('hidden');
+  menuCloseButton.classList.remove('hidden');
+});
+
+// Закриття меню при кліку на кнопку закриття
+  menuCloseButton.addEventListener('click', () => {
+  mobMenu.classList.remove('is-open');
+  menuOpenButton.classList.remove('hidden');
+  menuCloseButton.classList.add('hidden');
+});
