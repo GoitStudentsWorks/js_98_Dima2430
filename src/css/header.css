@@ -32,9 +32,11 @@ body.dark-theme .menu-open-icon {
 
 button {
   padding: 0;
-}
+} 
 
-.header {
+
+
+ .header {
   position: fixed;
   top: 0;
   left: 0;
@@ -68,12 +70,6 @@ button {
   gap: 8px;
 }
 
-.logo-icon {
-}
-
-.logo-text-icon {
-  
-}
 
 .header-menu {
   display: none;
@@ -88,13 +84,14 @@ button {
 }
 
 .basket-icon {
-  
+  fill: #111;
 }
 
 .box-btn {
   display: flex;
   align-items: center;
   justify-content: center;
+  gap: 14px;
 }
 
 .theme-switch {
@@ -136,40 +133,75 @@ button {
 
 .theme-switch-input:checked ~ .slider {
   transform: translate(21px, -50%);
-}
+} 
 
 .menu-open-btn {
-  margin-left: 14px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: transparent;
+  border: none;
 }
 
 .menu-open-icon {
-  display: block;
+  display: flex;
   stroke: #111;
   justify-content: center;
   align-items: center;
   background-color: transparent;
+  
 }
+.menu-open-icon:hover .menu-open-btn {
+  stroke: #4f2ee8;
+}
+
+.menu-open-icon:focus .menu-open-btn {
+  stroke: #4f2ee8;
+}
+
+.menu-open-btn:focus .menu-open-icon {
+  stroke: #4f2ee8;
+}
+
+.menu-open-btn:hover .menu-open-icon {
+  stroke: #4f2ee8;
+}
+.menu-close-icon {
+  stroke: #111;
+  background-color: #f6f6f6;
+  
+}
+.menu-close-btn.hidden {
+ display: none;
+}
+
 
 .signup-btn {
   display: none;
 }
 
 @media screen and (min-width: 768px) {
+  
+  .menu-close-btn {
+    display: none;
+  }
+
   .menu-open-btn {
     display: none;
   }
 
   .theme-switch {
     margin-right: 24px;
-  }
-  .container {
-    max-width: 704px;
-    padding-left: 0;
-    padding-right: 0;
+  } */
+  .container { 
+    /* max-width: 704px; */
+    padding-left: 20;
+    padding-right: 20;
   }
 
   .header-menu {
-    margin-left: 40px;
+    min-width: 100%;
+    /* margin-left: 40px; */
     display: flex;
     gap: 16px;
     align-items: center;
@@ -225,8 +257,8 @@ button {
 }
 
 @media screen and (min-width: 1440px) {
- .container {
-  max-width: 1392px;
+ .container {  
+  /* max-width: 1392px; */
   overflow: hidden;
   display: flex;
  }
@@ -235,8 +267,8 @@ button {
   margin-right: 24px;
 }
 
-  .header-menu {
-    margin-left: 76px;
+  .header-menu.exception {
+    margin-left: 56px;
   }
 
   .signup-btn {
@@ -261,14 +293,13 @@ button {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0);
   }
 
-  .signup-btn:hover{
+   .signup-btn:hover{
     border: 2px solid #4f2ee8; 
     border-radius: 12px; 
     filter: brightness(120%);
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 }
-}
-
+} 
   
     
  
