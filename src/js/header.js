@@ -65,7 +65,6 @@ themeSwitch.addEventListener('click', toggleFontColor);
     }
   });
  
- 
 // Відкриття меню при кліку на кнопку відкриття
   menuOpenButton.addEventListener('click', () => {
   mobMenu.classList.add('is-open');
@@ -79,5 +78,7 @@ themeSwitch.addEventListener('click', toggleFontColor);
   mobMenu.classList.remove('is-open');
   menuOpenButton.classList.remove('hidden');
   menuCloseButton.classList.add('hidden');
+
 });
+
 

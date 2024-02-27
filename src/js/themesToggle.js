@@ -10,34 +10,34 @@ const h6 = document.querySelectorAll('h6');
 const a = document.querySelectorAll('a');
 
 // Load the saved theme from localStorage
-if (localStorage.getItem('theme') === 'dark') {
-    body.classList.add('blackTheme');
-    checkBox.checked = true;
-    const elements = [p, h1, h2, h3, h4, h5, h6, a];
-    elements.forEach(nodeList => {
-        nodeList.forEach(el => {
-            el.classList.add('newText');
-        });
-    });
-}
+// if (localStorage.getItem('theme') === 'dark') {
+//     body.classList.add('blackTheme');
+//     checkBox.checked = true;
+//     const elements = [p, h1, h2, h3, h4, h5, h6, a];
+//     elements.forEach(nodeList => {
+//         nodeList.forEach(el => {
+//             el.classList.add('newText');
+//         });
+//     });
+// }
 
-checkBox.addEventListener('change', function () {
-    const elements = [p, h1, h2, h3, h4, h5, h6, a];
+// checkBox.addEventListener('change', function () {
+//     const elements = [p, h1, h2, h3, h4, h5, h6, a];
 
-    elements.forEach(nodeList => {
-        nodeList.forEach(el => {
-            if (this.checked) {
-                el.classList.add('newText');
-                body.classList.add('blackTheme');
+//     elements.forEach(nodeList => {
+//         nodeList.forEach(el => {
+//             if (this.checked) {
+//                 el.classList.add('newText');
+//                 body.classList.add('blackTheme');
                 // Save the theme to localStorage
-                localStorage.setItem('theme', 'dark');
-            } else {
-                el.classList.remove('newText');
-                body.classList.remove('blackTheme');
+            //     localStorage.setItem('theme', 'dark');
+            // } else {
+            //     el.classList.remove('newText');
+            //     body.classList.remove('blackTheme');
                 // Save the theme to localStorage
-                localStorage.setItem('theme', 'light');
-            }
-        });
-    });
-});
+//                 localStorage.setItem('theme', 'light');
+//             }
+//         });
+//     });
+// });
 
