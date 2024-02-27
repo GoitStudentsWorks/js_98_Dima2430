@@ -1,5 +1,7 @@
 import axios from 'axios';
 import iziToast from 'izitoast';
+import { showLoader } from './js/loader';
+import { hideLoader } from './js/loader';
 const bestBooksGallery = document.querySelector('.best-books-gallery');
 
 const apiInstance = axios.create({
@@ -7,9 +9,9 @@ const apiInstance = axios.create({
 });
 async function getBestsellersBooks() {
   try {
-    // loader
+    showLoader();
     const result = await apiInstance.get('/top-books');
-    // Loader
+    hideLoader();
     return result.data;
   } catch (error) {
     iziToast.error({
