@@ -225,5 +225,8 @@ svg:hover path {
     }
 }
 .test{
-    margin-top: 20px;
+    position: fixed;    
+    top: 100px;
+    right: 0;
+    border: 1px solid red;
 }
