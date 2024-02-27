@@ -40,27 +40,36 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   
     function toggleShoppingList() {
+      const bookId = openModalBtn.dataset.bookId;
+      const storedBooks = JSON.parse(localStorage.getItem('books_for_list')) || {};
+
         if (shoppingListBtn.textContent === "Add to shopping list") {
-            addToShoppingList();
+            addToShoppingList(bookId, storedBooks);
             showNotification('Congratulations! You have added the book to the shopping list. To delete, press the button “Remove from the shopping list”.');
             expandModalContent();
         } else {
-            removeFromShoppingList();
+            removeFromShoppingList(bookId, storedBooks);
             hideNotification();
             collapseModalContent();
         }
     }
   
-    function addToShoppingList() {
-        // TEST ще ніц нема
-        alert("Додано до локального сховища!");
-        shoppingListBtn.textContent = "Remove from the shopping list";
+    function addToShoppingList(bookId, storedBooks) {
+      // Зберігаємо книгу в локальне сховище
+      storedBooks[bookId] = true;
+      localStorage.setItem('books_for_list', JSON.stringify(storedBooks));
+      
+      alert("Додано до локального сховища!");
+      shoppingListBtn.textContent = "Remove from the shopping list";
     }
   
-    function removeFromShoppingList() {
-        // TEST ще ніц нема
-        alert("Видалено з локального сховища!");
-        shoppingListBtn.textContent = "Add to shopping list";
+    function removeFromShoppingList(bookId, storedBooks) {
+      // Видаляємо книгу з локального сховища
+      delete storedBooks[bookId];
+      localStorage.setItem('books_for_list', JSON.stringify(storedBooks));
+      
+      alert("Видалено з локального сховища!");
+      shoppingListBtn.textContent = "Add to shopping list";
     }
   
     function showNotification(message) {
@@ -84,19 +93,21 @@ document.addEventListener('DOMContentLoaded', function () {
 // ІНІЦІАЛІЗАЦІЯ ЗА id ТА ДОДАВАННЯ КОНТЕНТУ
 document.addEventListener('DOMContentLoaded', function () {
     const openModalBtn = document.getElementById('openModalBtn');
-    const closeModalBtn = document.getElementById('closeModalBtn');
     const modal = document.getElementById('myModal');
-    // test
-    openModalBtn = loadBookData('643282b1e85766588626a0c2');
-  
+
     openModalBtn.addEventListener('click', function () {
+      const bookId = openModalBtn.dataset.bookId;
+      const storedBooks = JSON.parse(localStorage.getItem('books_for_list')) || {};
+      
+      if (storedBooks[bookId]) {
+          shoppingListBtn.textContent = "Remove from the shopping list";
+      } else {
+          shoppingListBtn.textContent = "Add to shopping list";
+      }
+      
       loadBookData(bookId);
       modal.style.display = 'block';
-    });
-  
-    closeModalBtn.addEventListener('click', function () {
-      modal.style.display = 'none';
-    });
+  });
 });
   
 function loadBookData(bookId) {
@@ -143,3 +154,8 @@ function fillModalContent(book) {
       }
     }
 }
+// setInterval(() => {
+//   console.log(localStorage.length);
+//   console.log(localStorage);
+//   localStorage.clear();
+// }, 5000);
