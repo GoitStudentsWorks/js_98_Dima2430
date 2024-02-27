@@ -40,3 +40,4 @@ function onAddBtnClick() {
     saveToLS(STORAGE_KEY, addedBook1);
 };
 
+// saveToLS('643282b1e85766588626a080', addedBook2);

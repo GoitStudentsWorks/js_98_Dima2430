@@ -1,6 +1,7 @@
 
 const slistGalleryEl = document.querySelector('.slist-card-section');
 const background = document.querySelector('.slist-demo-thumb');
+// console.log(slistGalleryEl);
 
 let key;                  //ключ
 let arrOfBooks = [];       // збираємо данні localStorage в масив  
@@ -33,9 +34,6 @@ function imageTemplate({ id, book_image,title,list_name,description,author,amazo
   return `<div class="slist-card-list">
             <div class="slist-card-item">
               <button type="button" data-id=${id} class="slist-del-btn js-slist-del-btn">
-                <svg class="slist-del-btn-img">
-                  <use href="./img/javascript.svg#trash"></use>
-                </svg>
               </button>
               <div class="slist-card-picture">
                 <img src="${book_image}" class="slist-book-img" alt="books" />
@@ -50,13 +48,12 @@ function imageTemplate({ id, book_image,title,list_name,description,author,amazo
                   <ul class="slist-nav-list">
                     <li class="slist-nav-item">
                       <a href="${amazonURL}" class="slist-nav-link">
-                      <svg class="img-amazone">
-            <use href="../img/icons.svg#icon-amazon-pay"></use>
-          </svg></a>
+                      <img class="img-amazone logo" src="./img/amazon.png" alt="app">
+                     </a>
                     </li>
 
                     <li class="slist-nav-item">
-                      <a href="${appleURL}" class="slist-nav-link"><img class="img-app" src="./img/ap.png" alt="app"></a>
+                      <a href="${appleURL}" class="slist-nav-link"><img class="img-app logo" src="./img/ibook.png" alt="app"></a>
                       
                     </li>
                   </ul>
@@ -115,3 +112,39 @@ function showbackground() {
   background.classList.remove('is-hidden');
 
 };
+
+
+
+
+
+
+
+
+//  const addedBook2 = {
+//     id: "643282b1e85766588626a080",
+//     book_image: "https://storage.googleapis.com/du-prd/books/images/9781982185824.jpg",
+//     author: "Harlan Coben",
+//     list_name: "Audio Fiction",
+//     description: "",
+//     title: "FIND YOU",
+//     amazonURL: "https://www.amazon.com/dp/1538748363?tag=NYTBSREV-20",
+//     appleURL: "https://goto.applebooks.apple/9781543661385?at=10lIEQ",
+//     };
+
+
+
+// function saveToLS(STORAGE_KEY, value) {
+//   const jsonData = JSON.stringify(value);
+//   localStorage.setItem(STORAGE_KEY, jsonData);
+// }; 
+
+// function onAddBtnClick() {
+
+    
+//     STORAGE_KEY = addedBook2.id;     // дістаємо id з форми
+//     saveToLS(STORAGE_KEY, addedBook2);
+// };
+
+// saveToLS('643282b1e85766588626a080', addedBook2);
+
+
