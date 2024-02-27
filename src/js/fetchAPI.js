@@ -1,5 +1,7 @@
 import axios from 'axios';
 import iziToast from 'izitoast';
+import { showLoader } from './loader';
+import { hideLoader } from './loader';
 const bestBooksGallery = document.querySelector('.best-books-gallery');
 
 const apiInstance = axios.create({
@@ -7,9 +9,9 @@ const apiInstance = axios.create({
 });
 async function getBestsellersBooks() {
   try {
-    // loader
+    showLoader();
     const result = await apiInstance.get('/top-books');
-    // Loader
+    hideLoader();
     return result.data;
   } catch (error) {
     iziToast.error({
@@ -31,13 +33,13 @@ function createCategoryBooksMarkup({ list_name, books }) {
               <li class="book-card" data-id="${book._id}">
               <div class="book-card-hover">
                 <img class="book-cover" src="${book.book_image}" alt="${book.title}"/>
+                <div class="view-more">
+                <p class="view-more-text">quick view</p>
+                </div>
+                </div>
                 <div class="book-descr">
                 <h2 class="book-name">${book.title}</h2>
                 <h3 class="book-author">${book.author}</h3>
-                </div>
-                <div class="view-more">
-                <p class="view-more-text">Click for view more information and buy it</p>
-                </div>
                 </div>
               </li>
             `;
