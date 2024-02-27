@@ -2,29 +2,29 @@
 const slistGalleryEl = document.querySelector('.slist-card-section');
 const background = document.querySelector('.slist-demo-thumb');
 
-let key;                  //ключ
-let arrOfBooks = [];       // збираємо данні localStorage в масив  
 
 
-//завантажуємо з ЛС по данним ключа і збираємо в масив обєктів
+
+const STORAGE_KEY = "local-storage-books";                 //ключ
+ 
 function loadFromLS(key) {
   try {
-    for (let i = 0; i < localStorage.length; i++) {
-      let key = localStorage.key(i);
+   
       const data = localStorage.getItem(key);
       const result = JSON.parse(data);
-      arrOfBooks.push(result);
- 
-    };
-  } catch {console.log(error);}
+        return result;
+  } catch {console.log('error');
+    showbackground(); }
          
 };
-      
-  loadFromLS();
+
+   
+
+const array = loadFromLS(STORAGE_KEY);
+
   
 
-
-renderImages(arrOfBooks);     //рендеримо розмітку
+renderImages(array);     //рендеримо розмітку
 
   
 
@@ -42,9 +42,9 @@ function imageTemplate({ id, book_image,title,list_name,description,author,amazo
               </div>
               <div class="slist-info-container">
                 <h3 class="slist-book-header">${title}</h3>
-                <div class="slist-book-category">${list_name}</div>
+                <h4 class="slist-book-category">${list_name}</h4>
                 <p class="slist-book-description">${description}</p>
-                <div class="slist-book-autor">${author}</div>
+                <h5 class="slist-book-autor">${author}</h5>
 
                 <div class="slist-nav">
                   <ul class="slist-nav-list">
@@ -67,40 +67,50 @@ function imageTemplate({ id, book_image,title,list_name,description,author,amazo
 
 
 
-
 function imagesTemplate(array) {
-    return array.map(imageTemplate).join('');
+  return array.map(imageTemplate).join('');
       
 };
 
 function renderImages(array) {
-   if (localStorage.length === 0) {
+   
+  if (array === null || array === [] || !STORAGE_KEY) {
+    
     showbackground(); 
-    }
-    const markup = imagesTemplate(array);
+  } else {
+   const markup = imagesTemplate(array);
   slistGalleryEl.innerHTML = markup;
- 
-  
-   slistGalleryEl.addEventListener('click', onBtnClick); // ставимо слухача на форму 
+    slistGalleryEl.addEventListener('click', onBtnClick);
+    } // ставимо слухача на форму
 };
 
-  function onBtnClick(e) {
- 
 
-  if (e.target.nodeName === 'BUTTON') {
+
+ async function onBtnClick(e) {
+   if (e.target.nodeName === 'BUTTON') {
     console.log(e.target.dataset.id);
+  
     let bookId = (e.target.dataset.id);//знаходимо по ід на кнопку повішену
-    localStorage.removeItem(e.target.dataset.id);
-    // console.log(arrOfBooks);
-   const newarr = arrOfBooks.filter(item => (item.id === bookId));
-    arrOfBooks.splice(
-      arrOfBooks.findIndex(item => item.id === bookId),
+   
+    const jsonString = localStorage.getItem(STORAGE_KEY);
+    let currentArray = JSON.parse(jsonString);
+    localStorage.removeItem(STORAGE_KEY)
+     currentArray.splice(
+      currentArray.findIndex(item => item.id === bookId),
       1
     );
-    console.log(arrOfBooks);
+    console.log(currentArray);
+    if (currentArray.length < 1) {
+      localStorage.removeItem(STORAGE_KEY);
+      slistGalleryEl.innerHTML = "";
+      showbackground(); 
+    } else {
+    const updatedJsonString = JSON.stringify(currentArray);
+      localStorage.setItem(STORAGE_KEY, updatedJsonString);
+      renderImages(currentArray);
+    };
         
-    renderImages(arrOfBooks);
-    
+      
   };
 
 
@@ -115,3 +125,8 @@ function showbackground() {
   background.classList.remove('is-hidden');
 
 };
+
+
+
+
+
