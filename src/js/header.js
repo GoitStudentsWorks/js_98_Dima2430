@@ -28,6 +28,9 @@ if (savedTheme === 'dark') {
 // Додавання події для перемикання теми
 themeSwitch.addEventListener('change', toggleTheme);
 
+themeSwitch.addEventListener('click', toggleTheme);
+
+
 // функція додавання та видалення класу
 
   const menu = document.querySelector('.header-menu');
@@ -44,7 +47,7 @@ themeSwitch.addEventListener('change', toggleTheme);
     }
   });
  
-
+ 
 // Відкриття меню при кліку на кнопку відкриття
   menuOpenButton.addEventListener('click', () => {
   mobMenu.classList.add('is-open');

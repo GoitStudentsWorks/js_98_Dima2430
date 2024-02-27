@@ -24,7 +24,7 @@ body {
   color: #111111;
 }
 .container {
-  width: 375px;
+  /* width: 375px; */
   margin: 0 auto;
   padding: 0 20px;
 }
