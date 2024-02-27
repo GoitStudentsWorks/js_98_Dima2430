@@ -30,6 +30,24 @@ themeSwitch.addEventListener('change', toggleTheme);
 
 themeSwitch.addEventListener('click', toggleTheme);
 
+// Функція для зміни кольору шрифтів
+function toggleFontColor() {
+  const body = document.querySelector('body');
+  
+  if (body.classList.contains('dark-theme')) {
+      body.style.color = 'white'; // Змінюємо колір шрифтів для темної теми
+  } else {
+      body.style.color = 'black'; // Змінюємо колір шрифтів для світлої теми
+  }
+}
+
+// Викликаємо функцію при завантаженні сторінки
+toggleFontColor();
+
+// Додавання подій для зміни кольору шрифтів при зміні теми
+themeSwitch.addEventListener('change', toggleFontColor);
+themeSwitch.addEventListener('click', toggleFontColor);
+
 
 // функція додавання та видалення класу
 
