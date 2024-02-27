@@ -48,8 +48,10 @@ function imageTemplate({ id, book_image,title,list_name,description,author,amazo
                   <ul class="slist-nav-list">
                     <li class="slist-nav-item">
                       <a href="${amazonURL}" class="slist-nav-link">
+
                       <img class="img-amazone logo" src="./img/amazon.png" alt="app">
                      </a>
+
                     </li>
 
                     <li class="slist-nav-item">
