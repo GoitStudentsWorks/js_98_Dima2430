@@ -56,24 +56,20 @@ const menu = document.querySelector('.header-menu');
       
  
 // Відкриття меню при кліку на кнопку відкриття
-  menuOpenButton.addEventListener('click', () => {
+menuOpenButton.addEventListener('click', () => {
   mobMenu.classList.add('menu-is-open');
   menuOpenButton.classList.remove('is-open');
   document.body.style.overflow = 'hidden';
-  mobMenu.body.style.overflow = 'hidden';
+  mobMenu.style.overflow = 'hidden'; 
   menuOpenButton.classList.add('hidden');
   menuCloseButton.classList.remove('hidden');
 });
 
+
 // Закриття меню при кліку на кнопку закриття
   menuCloseButton.addEventListener('click', () => {
+  document.body.style.overflow = 'auto';
   mobMenu.classList.remove('menu-is-open');
   menuOpenButton.classList.remove('hidden');
-  document.body.style.overflow = 'auto';
-  mobMenu.body.style.overflow = 'auto';
-   menuCloseButton.classList.add('hidden');
- });
-
-
-
-
+  menuCloseButton.classList.add('hidden');
+});
