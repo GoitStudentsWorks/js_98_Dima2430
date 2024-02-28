@@ -8,14 +8,11 @@ body.dark-theme {
   color: rgba(255, 255, 255, 0.6);
 }
 
-body.dark-theme .header-container {
+body.dark-theme .header {
   background-color: #111;
   border: 1.50px solid #fff;
 }
 
-body.dark-theme .btn-active {
-  color: #111;
-}
 
 body.dark-theme .page-title {
   color: #fff;
@@ -36,6 +33,9 @@ body.dark-theme .logo-text-icon {
 body.dark-theme .header-menu-link {
   color: #fff;
 }
+/* body.dark-theme .btn-active {
+  color: #111;
+} */
 
 body.dark-theme .basket-icon {
   fill: #fff;
@@ -96,7 +96,9 @@ body.dark-theme a {
 button {
   padding: 0;
 } 
-
+a {
+  text-decoration: none;
+}
  .header {
   width: 100%;
   top: 0;
@@ -134,6 +136,12 @@ align-items: center;
   fill: #111;
 }
 
+/* .open-list {
+  color: #111;
+  border-radius: 36px;
+  padding: 8px 16px;
+  background: #eac645;
+} */
 .box-btn {
   display: flex;
   align-items: center;
@@ -191,7 +199,7 @@ align-items: center;
 }
 
 .menu-open-icon {
-  display: flex;
+  display: block;
   stroke: #111;
   justify-content: center;
   align-items: center;
@@ -217,25 +225,33 @@ align-items: center;
 }
 .menu-close-icon {
   stroke: #111;
-  background-color: #f6f6f6;
-  
-}
-.menu-close-btn.hidden {
- display: none;
 }
 
-.menu-close-icon {
-  stroke: #111;
-  background-color: #f6f6f6;
-} 
-
-.menu-close-btn.hidden {
- display: none;
+.menu-close-btn {
+  display: flex;
+  background-color: transparent;
+  border: none;
 }
 
 .signup-btn {
   display: none;
 }
+
+.hidden {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: auto;
+  display: none;
+}
+
+.is-open {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+  display: flex;
+}
+
+
 
 @media screen and (min-width: 768px) {
   .header-logo{

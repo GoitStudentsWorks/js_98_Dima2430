@@ -5,10 +5,8 @@ const menuCloseButton = document.querySelector('.menu-close-btn');
 const mobMenu = document.querySelector('.menu-modal');
 const booksBtn = document.querySelector('.book-card-btn');
 const modal = document.querySelector('.modal-content')
-const paragraphs = document.querySelectorAll('p');
 const h1 = document.querySelectorAll('h1');
 const h2 = document.querySelectorAll('h2');
-const h3 = document.querySelectorAll('h3');
 const h4 = document.querySelectorAll('h4');
 const h5 = document.querySelectorAll('h5');
 const h6 = document.querySelectorAll('h6');
@@ -58,24 +56,20 @@ const menu = document.querySelector('.header-menu');
       
  
 // Відкриття меню при кліку на кнопку відкриття
-  menuOpenButton.addEventListener('click', () => {
+menuOpenButton.addEventListener('click', () => {
   mobMenu.classList.add('menu-is-open');
   menuOpenButton.classList.remove('is-open');
   document.body.style.overflow = 'hidden';
-  mobMenu.body.style.overflow = 'hidden';
+  mobMenu.style.overflow = 'hidden'; 
   menuOpenButton.classList.add('hidden');
   menuCloseButton.classList.remove('hidden');
 });
 
+
 // Закриття меню при кліку на кнопку закриття
   menuCloseButton.addEventListener('click', () => {
+  document.body.style.overflow = 'auto';
   mobMenu.classList.remove('menu-is-open');
   menuOpenButton.classList.remove('hidden');
-  document.body.style.overflow = 'auto';
-  mobMenu.body.style.overflow = 'auto';
-   menuCloseButton.classList.add('hidden');
- });
-
-
-
-
+  menuCloseButton.classList.add('hidden');
+});
