@@ -2,7 +2,7 @@
 
 
 
-const STORAGE_KEY = "local-storage-books";   // назву залишити
+export const STORAGE_KEY = "local-storage-books";   // назву залишити
 
 
 

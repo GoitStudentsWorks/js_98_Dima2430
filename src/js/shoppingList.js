@@ -5,8 +5,8 @@ const background = document.querySelector('.slist-demo-thumb');
 
 
 
-
-const STORAGE_KEY = "local-storage-books";                 //ключ
+import { STORAGE_KEY } from "./local-storage"          //ключ
+                
  
 function loadFromLS(key) {
   try {

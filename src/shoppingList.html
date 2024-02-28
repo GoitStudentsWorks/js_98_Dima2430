@@ -4,43 +4,42 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./css/header.css" />
     <link rel="stylesheet" href="./css/shoppingList.css" />
     <title>shopping list</title>
   </head>
   <body>
     <!-- mobile version -->
 
-    <header class="demo-header">
-      <section>
-        <a href="./index.html">Go to home</a>
-      </section>
-    </header>
+    <load src="partials/header.html" />
     <!-- mobile version main -->
-
-    <section class="slist-section">
-      <div class="slist-container">
-        <h2 class="slist-header">
-          Shopping <span class="slist-header-span">List</span>
-        </h2>
-      </div>
-
-      <!-- BACKGROUND-->
-      <div class="slist-container">
-        <div class="slist-demo-thumb is-hidden">
-          <p class="slist-demo-text">
-            This page is empty, add some books and proceed to order.
-          </p>
-          <div class="slist-demopicture-thumb">
-            <img src="../img/books.png" alt="books" />
-          </div>
+    <main>
+      <section class="slist-section">
+        <div class="slist-tittle-container">
+          <h2 class="slist-header">
+            Shopping <span class="slist-header-span">List</span>
+          </h2>
         </div>
 
-        <!-- BOOK RENDER-->
+        <!-- BACKGROUND-->
+        <div class="slist-container">
+          <div class="slist-demo-thumb is-hidden">
+            <p class="slist-demo-text">
+              This page is empty, add some books and proceed to order.
+            </p>
+            <div class="slist-demopicture-thumb">
+              <img src="../img/books.png" alt="books" />
+            </div>
+          </div>
 
-        <div class="slist-card-section"></div>
-      </div>
-    </section>
-    <script type="module" src="./js/shoppingList.js"></script>
-    <script type="module" src="./js/local-storage.js"></script>
+          <!-- BOOK RENDER-->
+
+          <div class="slist-card-section"></div>
+        </div>
+      </section>
+      <script type="module" src="./js/shoppingList.js"></script>
+      <script type="module" src="./js/header.js"></script>
+      <!-- <script type="module" src="./js/local-storage.js"></script> -->
+    </main>
   </body>
 </html>
