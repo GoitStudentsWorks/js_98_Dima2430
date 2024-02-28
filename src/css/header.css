@@ -30,57 +30,45 @@ body.dark-theme .menu-open-icon {
   stroke: #fff;
 }
 
+body.dark-theme p {
+  color: #fff;
+}
+
 button {
   padding: 0;
 } 
 
-
  .header {
-  position: fixed;
   width: 100%;
-  height: 64px;
   top: 0;
   left: 0;
   z-index: 100;
-  /* margin-bottom: 40px; */
+  border: 1.50px solid #111;
+  border-radius: 0 0 8px 8px;
   background-color: #f6f6f6;
 }
 
-
 .header-container {
-  /* min-width: 100%; */
-  display: flex;
-  border: 1.50px solid #111;
-  border-radius: 0 0 8px 8px;
-  justify-content: space-between;
-  align-items: center;
-  padding-top: 18px;
-  padding-bottom: 18px;
+display: flex;
+justify-content: space-between;
+align-items: center;
 }
-
+  
 .header-naviganion {
   display: flex;
-
 }
 
 .header-logo {
   display: flex;
+  padding-top: 18px;
+  padding-bottom: 18px;
   justify-content: center;
   align-items: center;
   gap: 8px;
 }
 
-
 .header-menu {
   display: none;
-}
-
-.header-item {
-  
-}
-
-.header-menu-link {
-  
 }
 
 .basket-icon {
@@ -151,6 +139,7 @@ button {
   background-color: transparent;
   
 }
+
 .menu-open-icon:hover .menu-open-btn {
   stroke: #4f2ee8;
 }
@@ -174,29 +163,27 @@ button {
 }
 .menu-close-btn.hidden {
  display: none;
-
 }
+
 .menu-close-icon {
   stroke: #111;
   background-color: #f6f6f6;
-  
-}
+} 
+
 .menu-close-btn.hidden {
  display: none;
 }
-
-
 
 .signup-btn {
   display: none;
 }
 
 @media screen and (min-width: 768px) {
-  .header {
-    height: 72px;
+  .header-logo{
+    padding-top: 22px;
+    padding-bottom: 22px;
   }
 
-  
   .menu-close-btn {
     display: none;
   }
@@ -207,26 +194,22 @@ button {
 
   .theme-switch {
     margin-right: 24px;
-
-  } 
-
+  }
+   
   .header-container { 
     min-width: 768px;
-    padding: 0 24px;
-    /* padding-left: 20;
-    padding-right: 20; */
+    padding: 0 32px;
     margin: 0 auto;
-
   }
-
+    
   .header-menu {
     min-width: 100%;
-    /* margin-left: 40px; */
     display: flex;
     gap: 16px;
     align-items: center;
     justify-content: center;
   }
+
   .header-menu-link {
     display: flex;
     gap: 8px;
@@ -240,13 +223,14 @@ button {
     text-transform: uppercase;
     color: #111;
   }
+
   .exception {
     padding: 7px 16px;
     font-weight: 700;
     background: #eac645;
     border-radius: 36px;
-    
-  }
+   } 
+  
   .signup-btn {
     position: static;
     display: flex;
@@ -267,8 +251,6 @@ button {
     color: #fff;
   }
     
-  
-
   .signup-btn:hover{
     border: 2px solid #4f2ee8; 
     border-radius: 12px; 
@@ -278,51 +260,44 @@ button {
 }
 
 @media screen and (min-width: 1440px) {
-
  .header-container {  
   max-width: 1440px;
-  /* margin: 0 auto;
   padding: 0 24px;
-
-  overflow: hidden;
-  display: flex; */
  }
 
  .theme-switch {
   margin-right: 24px;
 }
 
-  .header-menu.exception {
-    margin-left: 56px;
-  }
+ .header-menu.exception {
+  margin-left: 56px;
+}
 
-  .signup-btn {
-    border: 1.50px solid #111;
-    border-radius: 18px;
-    min-width: 184px;
-    height: 48px;
-    /* margin-right: 24px; */
-    background: #4f2ee8;
-    font-family: "DM Sans", sans-serif;
-    font-weight: 700;
-    font-size: 14px;
-    line-height: 1.28571;
-    letter-spacing: -0.04em;
-    color: #fff;
-    text-align: left;
-    /* padding: 10px; */
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    cursor: pointer;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0);
-  }
+.signup-btn {
+  border: 1.50px solid #111;
+  border-radius: 18px;
+  min-width: 184px;
+  height: 48px;
+  background: #4f2ee8;
+  font-family: "DM Sans", sans-serif;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 1.28571;
+  letter-spacing: -0.04em;
+  color: #fff;
+  text-align: left;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0);
+ }  
 
-   .signup-btn:hover{
-    border: 2px solid #4f2ee8; 
-    border-radius: 12px; 
-    filter: brightness(120%);
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  .signup-btn:hover{
+  border: 2px solid #4f2ee8; 
+  border-radius: 12px; 
+  filter: brightness(120%);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 }
 } 
 
