@@ -86,6 +86,7 @@ body {
 }
 
 
+
     .slist-tittle-container{
         display: block;
         margin-left: 0;
@@ -102,6 +103,40 @@ body {
         letter-spacing: -0.04em;
         color: var(--black-color);
     }
+
+
+/* 
+/* PAGE */
+
+.slist-section {
+    margin-top: 112px;
+    max-width: 335px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+    .slist-tittle-container{
+              
+    margin-bottom: 40px;
+    }
+   
+
+   .slist-header-container {
+       display: block;
+       margin-left: 0;
+       margin-bottom: 40px;
+   }
+
+   .slist-header {
+
+       font-family: "DM Sans", sans-serif;
+       font-weight: 700;
+       font-size: 32px;
+       line-height: 38px;
+       letter-spacing: -0.04em;
+       color: var(--black-color);
+   } */
+
 
     .slist-header-span {
         color: var(--violet);
@@ -135,6 +170,7 @@ body {
     /* book card*/
 
 
+
 .slist-card-item {
     display: block;
     position: relative;
@@ -147,6 +183,7 @@ body {
     height: 170px;
     background-color: #fff;
     }
+
 
 
 
@@ -289,6 +326,7 @@ body {
 
 @media screen and (min-width: 768px) {
 
+
     .header-container {
             min-width: 704px;
            
@@ -296,13 +334,19 @@ body {
 
     .slist-section {
             margin-top: 40px;
+
             max-width: 704px;
             margin-left: auto;
             margin-right: auto;
         }
 
     .slist-header {
-   
+
+        /* display: inline-block; */
+        /* margin-top: 40px;
+        margin-bottom: 40px;
+        margin-left: 32px; */
+
         font-family: "DM Sans", sans-serif;
         font-weight: 700;
         font-size: 48px;
@@ -335,6 +379,7 @@ body {
     /* book card*/
 
 
+
    .slist-card-item {
        display: flex;
        gap: 20px;
@@ -343,6 +388,7 @@ body {
        height: 213px;
 
    }
+
 
     .slist-del-btn {
         top: 24px;
@@ -422,9 +468,14 @@ body {
 
 .slist-section {
         margin-top: 112px;
+
         width: 996px;
         margin-left: 420px;
         margin-right: auto;
+      
+       
+
+
     }
 
   
@@ -450,7 +501,10 @@ body {
     }
 
 
-  
+  /* .slist-card-list{
+    margin-right: 0;
+    margin-left: 0;
+  } */
 
     .slist-book-header {
 
