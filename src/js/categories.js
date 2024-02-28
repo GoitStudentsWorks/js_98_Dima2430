@@ -52,7 +52,7 @@ function renderBooks(books, nc){
     const categoriesList = `<ul class="category-books">${markup}</ul>`;
     const booksCategory = `<h2 class="category-title">${nc}</h2>${categoriesList}`;
     console.log(markup);
-    const booksContainer = document.getElementById('books-container');
+    const booksContainer = document.querySelector('.best-books-gallery');
     booksContainer.innerHTML = booksCategory;
 }
 
