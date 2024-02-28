@@ -1,11 +1,5 @@
 @media screen and (max-width: 376px) {
 
-    /*TEMP*/
-    .header-container {
-        height: 64px;
-    }
-    /*TEMP*/
-
     .menu-modal {
         margin-top: 64px;
         box-shadow: 0px 10px 10px 0px rgba(245, 245, 247, 0.1);
@@ -18,6 +12,14 @@
             top: 0;
         
         overflow: hidden;
+
+        visibility: hidden;
+        opacity: 0;
+    }
+
+    .menu-is-open {
+        visibility: visible;
+        opacity: 1;
     }
 
     .name-caption {
@@ -76,7 +78,14 @@
         max-width: 100%;
         gap: 17px;
 
-        visibility: hidden;
+        visibility: visible;
+    }
+
+    .menu-shopping-caption {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: 4px;
     }
 
     .menu-home-link {
@@ -136,7 +145,7 @@
         
             background: rgb(79, 46, 232);
 
-        
+        visibility: hidden;
     }
 
     .menu-logout-btn {
