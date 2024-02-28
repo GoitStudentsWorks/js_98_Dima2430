@@ -56,10 +56,14 @@ img {
 }
 
 body {
+    margin: 0;
     background-color: var(--light-background);
 }
 .slist-section {
-    margin-top: 112px;
+    margin-top: 40px;
+    max-width: 335px;
+    margin-left: auto;
+    margin-right: auto;
     
 }
 
@@ -83,7 +87,25 @@ body {
 
 
 
+    .slist-tittle-container{
+        display: block;
+        margin-left: 0;
+        margin-bottom: 40px;
+    }
+  
 
+    .slist-header {
+        
+        font-family: "DM Sans", sans-serif;
+        font-weight: 700;
+        font-size: 32px;
+        line-height: 38px;
+        letter-spacing: -0.04em;
+        color: var(--black-color);
+    }
+
+
+/* 
 /* PAGE */
 
 .slist-section {
@@ -113,7 +135,8 @@ body {
        line-height: 38px;
        letter-spacing: -0.04em;
        color: var(--black-color);
-   }
+   } */
+
 
     .slist-header-span {
         color: var(--violet);
@@ -147,18 +170,20 @@ body {
     /* book card*/
 
 
-        .slist-card-item {
-            display: block;
-            position: relative;
-            box-sizing: border-box;
-            margin-bottom: 20px;
-            border: 2px solid rgba(79, 46, 232, 0.4);
-            border-radius: 16px;
-            padding: 14px;
-            width: 335px;
-            height: 170px;
-            background-color: #fff;
-        }
+
+.slist-card-item {
+    display: block;
+    position: relative;
+    box-sizing: border-box;
+    margin-bottom: 20px;
+    border: 2px solid rgba(79, 46, 232, 0.4);
+    border-radius: 16px;
+    padding: 14px;
+    width: 335px;
+    height: 170px;
+    background-color: #fff;
+    }
+
 
 
 
@@ -301,18 +326,27 @@ body {
 
 @media screen and (min-width: 768px) {
 
+
+    .header-container {
+            min-width: 704px;
+           
+        }
+
     .slist-section {
-            margin-top: 112px;
+            margin-top: 40px;
+
             max-width: 704px;
             margin-left: auto;
             margin-right: auto;
         }
 
     .slist-header {
+
         /* display: inline-block; */
         /* margin-top: 40px;
         margin-bottom: 40px;
         margin-left: 32px; */
+
         font-family: "DM Sans", sans-serif;
         font-weight: 700;
         font-size: 48px;
@@ -345,14 +379,16 @@ body {
     /* book card*/
 
 
-  .slist-card-item {
-      display: flex;
-      gap: 20px;
-      padding: 24px;
-      width: 704px;
-      height: 213px;
 
-  }
+   .slist-card-item {
+       display: flex;
+       gap: 20px;
+       padding: 24px;
+       width: 704px;
+       height: 213px;
+
+   }
+
 
     .slist-del-btn {
         top: 24px;
@@ -432,23 +468,21 @@ body {
 
 .slist-section {
         margin-top: 112px;
-        max-width: 996px;
+
+        width: 996px;
         margin-left: 420px;
         margin-right: auto;
-    }
-
-    .slist-header {
-        display: inline-block;
-        margin-top: 40px;
-        margin-bottom: 40px;
+      
        
 
+
     }
+
+  
 
     .slist-demo-thumb {
         margin-top: 100px;
         margin-bottom: auto;
-        margin-left: 735px;
         width: 349px;
         height: 309px;
     }
@@ -460,7 +494,7 @@ body {
     .slist-card-item {
         
         margin-right: 24px;
-        padding: 24px 24px;
+        padding:24px;
         width: 996px;
         height: 213px;
 
