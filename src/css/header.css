@@ -45,10 +45,6 @@ body.dark-theme .exception {
   color: #111;
 }
 
-body.dark-theme .theme-toggle {
-  fill: linear-gradient(180deg, #4f2ee8 0%, #686868 100%);
-}
-
 body.dark-theme .menu-open-icon {
   stroke: #fff;
 }
@@ -61,7 +57,18 @@ body.dark-theme .modal-content {
   background-color: #111;
 }
 
-body.dark-theme p {
+body.dark-theme .button_mod {
+  background-color: #111;
+}
+
+body.dark-theme .description {
+  color: #fff;
+}
+
+body.dark-theme .book_name {
+  color: #fff;
+}
+body.dark-theme .logo {
   color: #fff;
 }
 
@@ -70,10 +77,6 @@ body.dark-theme h1 {
 }
 
 body.dark-theme h2 {
-  color: #fff;
-}
-
-body.dark-theme h3 {
   color: #fff;
 }
 
@@ -89,9 +92,9 @@ body.dark-theme h6 {
   color: #fff;
 }
 
-body.dark-theme a {
+/* body.dark-theme a {
   color: #fff;
-}
+} */
 
 button {
   padding: 0;
