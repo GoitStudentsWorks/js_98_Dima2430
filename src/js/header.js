@@ -73,3 +73,40 @@ menuOpenButton.addEventListener('click', () => {
   menuOpenButton.classList.remove('hidden');
   menuCloseButton.classList.add('hidden');
 });
+// When the page loads, check the stored state and apply the styles
+window.onload = function() {
+    const activeButton = localStorage.getItem('activeButton');
+    if (activeButton) {
+        document.querySelector(activeButton).classList.add("activeButton");
+        document.querySelector(activeButton).classList.remove("inactiveButton");
+        const inactiveButton = activeButton === ".header-menu-link" ? ".header-menu-shopping" : ".header-menu-link";
+        document.querySelector(inactiveButton).classList.remove("activeButton");
+        document.querySelector(inactiveButton).classList.add("inactiveButton");
+    }
+};
+
+document.querySelector(".header-menu-link").addEventListener("click", function (e) {
+  e.preventDefault();
+    this.classList.add("activeButton");
+    this.classList.remove("inactiveButton");
+    let shoppingListButton = document.querySelector(".header-menu-shopping");
+    shoppingListButton.classList.remove("activeButton");
+    shoppingListButton.classList.add("inactiveButton");
+    // Store the state
+    localStorage.setItem('activeButton', '.header-menu-link');
+    window.location.href = "index.html";
+});
+
+document.querySelector(".header-menu-shopping").addEventListener("click", function (e) {
+  e.preventDefault();
+    this.classList.add("activeButton");
+    this.classList.remove("inactiveButton");
+    let homeButton = document.querySelector(".header-menu-link");
+    homeButton.classList.remove("activeButton");
+    homeButton.classList.add("inactiveButton");
+    // Store the state
+    localStorage.setItem('activeButton', '.header-menu-shopping');
+    window.location.href = "shoppingList.html";
+});
+
+
