@@ -3,8 +3,10 @@ const body = document.querySelector('body');
 const menuOpenButton = document.querySelector('.menu-open-btn');
 const menuCloseButton = document.querySelector('.menu-close-btn');
 const mobMenu = document.querySelector('.menu-modal');
+const booksBtn = document.querySelector('.book-card-btn');
+const modal = document.querySelector('.modal-content')
 const paragraphs = document.querySelectorAll('p');
-const headings = document.querySelectorAll('h1');
+const h1 = document.querySelectorAll('h1');
 const h2 = document.querySelectorAll('h2');
 const h3 = document.querySelectorAll('h3');
 const h4 = document.querySelectorAll('h4');
@@ -15,18 +17,10 @@ const a = document.querySelectorAll('a');
 // Функція для зміни теми та збереження її в локальному сховищі
 function toggleTheme() {
     if (themeSwitch.checked === false) {
-       paragraphs.forEach(p => p.classList.remove('light-theme'));
-       paragraphs.forEach(p => p.classList.add('dark-theme'));
-      //  h1.forEach(h => h.classList.remove('light-theme'));
-      //  h1.forEach(h => h.classList.add('dark-theme'));
         body.classList.add('light-theme');
         body.classList.remove('dark-theme');
         localStorage.setItem('theme', 'light'); // Зберігаємо стан теми в локальному сховищі
     } else {
-      paragraphs.forEach(p => p.classList.add('light-theme'));
-      paragraphs.forEach(p => p.classList.remove('dark-theme'));
-      // h1.forEach(h => h.classList.add('light-theme'));
-      // h1.forEach(h => h.classList.remove('dark-theme'));
         body.classList.remove('light-theme');
         body.classList.add('dark-theme');
         localStorage.setItem('theme', 'dark'); // Зберігаємо стан теми в локальному сховищі
@@ -44,32 +38,11 @@ if (savedTheme === 'dark') {
 
 // Додавання події для перемикання теми
 themeSwitch.addEventListener('change', toggleTheme);
-
 themeSwitch.addEventListener('click', toggleTheme);
-
-// Функція для зміни кольору шрифтів
-function toggleFontColor() {
-  const body = document.querySelector('body');
-  
-  if (body.classList.contains('dark-theme')) {
-      body.style.color = 'white'; // Змінюємо колір шрифтів для темної теми
-  } else {
-      body.style.color = 'black'; // Змінюємо колір шрифтів для світлої теми
-  }
-}
-
-// Викликаємо функцію при завантаженні сторінки
-toggleFontColor();
-
-// Додавання подій для зміни кольору шрифтів при зміні теми
-themeSwitch.addEventListener('change', toggleFontColor);
-themeSwitch.addEventListener('click', toggleFontColor);
 
 
 // функція додавання та видалення класу
-
-  const menu = document.querySelector('.header-menu');
-
+const menu = document.querySelector('.header-menu');
   menu.addEventListener('click', function(event) {
     if (event.target.matches('.header-menu-link')) {
 
@@ -77,10 +50,12 @@ themeSwitch.addEventListener('click', toggleFontColor);
       links.forEach(link => {
         link.classList.remove('exception');
       });
-
-      event.target.classList.add('exception');
+   event.target.classList.add('exception');
     }
   });
+  
+  
+      
  
 // Відкриття меню при кліку на кнопку відкриття
   menuOpenButton.addEventListener('click', () => {
