@@ -33,7 +33,7 @@ const addedBook1 = {
 
 
 // addBn.addEventListener('click', onAddBtnClick);  // кнопка
-function onAddBtnClick() {
+export function onAddBtnClick() {
 
 // отримуємо поточний массив объектів из localStorage
 const jsonString = localStorage.getItem(STORAGE_KEY);
@@ -58,7 +58,7 @@ localStorage.setItem(STORAGE_KEY, updatedJsonString);
 };
 
 
-onAddBtnClick(STORAGE_KEY);
+// onAddBtnClick(STORAGE_KEY);    //для тестового завантаження
 
 
 
