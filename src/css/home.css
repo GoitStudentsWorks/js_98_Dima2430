@@ -50,6 +50,9 @@
   text-transform: uppercase;
   color: #111;
   margin-bottom: 4px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .book-author {
