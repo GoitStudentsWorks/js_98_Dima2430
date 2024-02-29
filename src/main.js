@@ -5,4 +5,4 @@ import iziToast from "izitoast";
 import "izitoast/dist/css/iziToast.min.css";
 import axios from 'axios';
 import Swiper from 'swiper';
-import 'swiper/css';
+
