@@ -1,9 +1,14 @@
                                                     <!-- TEST onclick="loadBookData('643282b1e85766588626a0c2')"   id="openModalBtn"-->
-<a class="test" id="openModalBtn" data-book-id="643282b1e85766588626a0c2">Відкрити вікно</a>
+<!-- <a class="test" id="openModalBtn" data-book-id="643282b1e85766588626a0c2">Відкрити вікно</a> -->
 
 <div id="myModal" class="modal">
     <div class="modal-content">  
-            <div class="content"> 
+        <span class="close" id="closeModalBtn">
+            <svg width="24" height="24" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M21 7L7 21M7 7L21 21" stroke="#111111" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+        </span>
+        <div class="content">  
                 <img alt="Book cover" class="img_modal"  src="" width=192px height=281px/>
 
                 <div class="text">
@@ -17,14 +22,13 @@
                 </div>
             </div>
 
-            <span class="close" id="closeModalBtn">
+            <!-- <span class="close" id="closeModalBtn">
                 <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M21 7L7 21M7 7L21 21" stroke="#111111" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" />
                 </svg>
-            </span>
+            </span> -->
         
         <div class="button_place">
-                                 <!-- TEST onclick="toggleShoppingList()"-->
             <button class="button_mod" id="shoppingListBtn" >Add to shopping list</button> 
         </div>
         <div id="notification" class="notification"></div>
