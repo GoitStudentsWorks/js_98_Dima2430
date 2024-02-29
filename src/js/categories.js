@@ -1,24 +1,50 @@
 import axios from 'axios';
 
-const bookCardBtn = document.querySelector('.book-card-btn');
+// const bookCardBtn = document.querySelector('.book-card-btn');
+// // const chooseButton = document.querySelector('.buttonChoose');
+// // const categoriesSelect = document.getElementById('categories');
+// let selectedCategory = '';
+
+
+// bookCardBtn.addEventListener('click', function() {
+//     selectedCategory = bookCardBtn.dataset.category;
+    
+//     console.log(selectedCategory);
+//     loadBooks(selectedCategory)
+//     .then((result) => {
+//         renderBooks(result, selectedCategory);
+
+//     }).catch((err) => {
+        
+//     });
+
+// });
+const bookCardBtn = document.querySelectorAll('.book-card-btn');
+const booksContainer = document.querySelector('.best-books-gallery');
 // const chooseButton = document.querySelector('.buttonChoose');
 // const categoriesSelect = document.getElementById('categories');
-let selectedCategory = '';
 
+booksContainer.addEventListener('click', onSeeMoreBtnClick);
 
-bookCardBtn.addEventListener('click', function() {
-    selectedCategory = bookCardBtn.dataset.category;
-    
-    console.log(selectedCategory);
-    loadBooks(selectedCategory)
-    .then((result) => {
-        renderBooks(result, selectedCategory);
+function onSeeMoreBtnClick(e) {
+  if (e.target.nodeName !== 'BUTTON') {
+    return;
+  }
+  const target = e.target;
+  try {
+    if (target.matches('button[data-category]')) {
+      const category = target.dataset.category;
 
-    }).catch((err) => {
-        
-    });
-
-});
+      loadBooks(category)
+        .then(result => {
+          renderBooks(result, category);
+        })
+        .catch(err => {});
+    }
+  } catch (error) {
+    console.log(error);
+  }
+}
 
 async function loadBooks(category) {
     try{
