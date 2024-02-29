@@ -1,24 +1,6 @@
 import axios from 'axios';
 
-// const bookCardBtn = document.querySelector('.book-card-btn');
-// // const chooseButton = document.querySelector('.buttonChoose');
-// // const categoriesSelect = document.getElementById('categories');
-// let selectedCategory = '';
 
-
-// bookCardBtn.addEventListener('click', function() {
-//     selectedCategory = bookCardBtn.dataset.category;
-    
-//     console.log(selectedCategory);
-//     loadBooks(selectedCategory)
-//     .then((result) => {
-//         renderBooks(result, selectedCategory);
-
-//     }).catch((err) => {
-        
-//     });
-
-// });
 const bookCardBtn = document.querySelectorAll('.book-card-btn');
 const booksContainer = document.querySelector('.best-books-gallery');
 // const chooseButton = document.querySelector('.buttonChoose');
@@ -61,12 +43,15 @@ async function loadBooks(category) {
 
 function booksMarkup({_id, book_image, title, author}){
     return `
-    <li class="book-card" data-id="${_id}">
+    <li class="book-card-category" data-id="${_id}">
       <div class="book-thumb">
-        <img class="book-cover" src="${book_image}" alt="${title}"/>
+        <img class="book-cover-cat" src="${book_image}" alt="${title}"/>
+        <div class="view-more view-more-cat">
+        <p class="view-more-text">quick view</p>
+        </div>
         </div>
         <div class="book-descr">
-        <h2 class="book-name">${title}</h2>
+        <h2 class="book-namne-cat">${title}</h2>
         <h3 class="book-author">${author}</h3>
         </div>
       </li>`;
@@ -75,9 +60,9 @@ function booksMarkup({_id, book_image, title, author}){
 function renderBooks(books, nc){
     // separatesWordsAddToTitle(nc);
     const markup = books.map(booksMarkup).join('');
-    const categoriesList = `<ul class="category-books">${markup}</ul>`;
+    const categoriesList = `<ul class="category-books-cat">${markup}</ul>`;
     const booksCategory = `<h2 class="category-title">${nc}</h2>${categoriesList}`;
-    console.log(markup);
+    // console.log(markup);
     const booksContainer = document.querySelector('.best-books-gallery');
     booksContainer.innerHTML = booksCategory;
 }
