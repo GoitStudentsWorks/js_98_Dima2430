@@ -8,6 +8,10 @@
     background-color: rgba(0, 0, 0, 0.5);
     z-index: 200;
 }
+.content{
+    position: relative;
+    top: -28px;
+}
 .modal-content {
     border: 2px solid #111111;
     border-radius: 18px;
@@ -22,16 +26,6 @@
 }
 .expanded{
     height: 806px;
-}
-.modal {
-    display: none;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.5);
-    
 }
 .img_modal{
     border-radius: 8px;
@@ -86,10 +80,12 @@
     font-size: 28px;
     font-weight: bold;
     cursor: pointer;
-    position: relative;
     color: #111111;
-    top:-644px;
-    right: -14px;
+    position: relative;
+    top: -32px;
+    right: -16px;
+    /* top: -570px;
+    right: -10px; */
     width:24px;
     height:24px;
 }
@@ -134,7 +130,7 @@ svg:hover path {
    flex-direction: column;
    align-items: center;
    justify-content: center; 
-   margin-top: 40px;
+   /* margin-top: 40px; */
    margin-bottom: 8px;
 
 }
@@ -164,14 +160,16 @@ svg:hover path {
     .content{
         display: flex;
         gap: 24px;
+        position: relative;
+        top: -0;
     }
     .modal-content {
         margin: 15% auto;
         padding: 40px;
         width: 579px;
         height: 465px;
-
-    
+        position: relative;
+        top: -68px;
     }
     .expanded{
         height: 501px;
@@ -202,8 +200,8 @@ svg:hover path {
         margin: 20px 0;
     }
     .close {
-        top:-300px;
-        right: -20px;
+        top:-20px;
+        right: -24px;
         width:28px;
         height:28px;
     }
