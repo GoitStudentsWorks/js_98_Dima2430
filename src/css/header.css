@@ -15,6 +15,16 @@ body.dark-theme .header {
 body.dark-theme .page-title {
   color: #fff;
 }
+body.dark-theme .slist-demo-text {
+  color: #fff;
+}
+body.dark-theme .slist-header-span {
+  color: #4f2ee8;
+}
+
+body.light-theme .slist-header-span {
+  color: #4f2ee8;
+}
 
 body.dark-theme .book-card-btn {
   color: #fff;
@@ -31,9 +41,7 @@ body.dark-theme .logo-text-icon {
 body.dark-theme .header-menu-link {
   color: #fff;
 }
-/* body.dark-theme .btn-active {
-  color: #111;
-} */
+
 
 body.dark-theme .basket-icon {
   fill: #fff;
@@ -92,9 +100,6 @@ body.dark-theme h6 {
   color: #fff;
 }
 
-/* body.dark-theme a {
-  color: #fff;
-} */
 
 button {
   padding: 0;
@@ -139,12 +144,6 @@ a {
   fill: #111;
 }
 
-/* .open-list {
-  color: #111;
-  border-radius: 36px;
-  padding: 8px 16px;
-  background: #eac645;
-} */
 .box-btn {
   display: flex;
   align-items: center;
