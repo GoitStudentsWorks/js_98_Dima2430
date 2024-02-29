@@ -1,4 +1,9 @@
-import { onAddBtnClick, STORAGE_KEY } from "./local-storage";
+import axios from 'axios';
+const STORAGE_KEY = "local-storage-books";
+const storedBooks = {};
+let dataId ;
+let dataBookId = dataId;
+
 
 document.addEventListener('DOMContentLoaded', function () {
   const parentContainer = document.getElementById('container');
@@ -12,7 +17,9 @@ document.addEventListener('DOMContentLoaded', function () {
       const clickedElement = event.target.closest('.book-card');
 
       if (clickedElement) {
-          const dataId = clickedElement.dataset.id;
+          dataId = clickedElement.dataset.id;
+          dataBookId = dataId;
+          console.log(dataId)
           openModal(dataId);
       }
   });
@@ -27,48 +34,71 @@ document.addEventListener('DOMContentLoaded', function () {
       }
   });
 
-  document.addEventListener('keydown', function (event) {
-      if (event.key === 'Escape' && modal.style.display === 'block') {
-          closeModal();
-      }
-  });
+shoppingListBtn.addEventListener('click', function () {
+  toggleShoppingList();
+});
 
-  shoppingListBtn.addEventListener('click', function () {
-      toggleShoppingList();
-  });
+function toggleShoppingList() {
+  const bookId = shoppingListBtn.dataset.bookId; // Assuming dataId is stored in dataset
 
-  function toggleShoppingList() {
-    const bookId = shoppingListBtn.dataset.bookId;
-    const storedBooks = JSON.parse(localStorage.getItem(STORAGE_KEY)) || {};
-      
-    if (shoppingListBtn.textContent === "Add to shopping list") {
-          addToShoppingList(bookId, storedBooks);
-          showNotification('Congratulations! You have added the book to the shopping list. To delete, press the button “Remove from the shopping list”.');
-          expandModalContent();
-      } else {
-          removeFromShoppingList(bookId, storedBooks);
-          hideNotification();
-          collapseModalContent();
-      }
+  if (shoppingListBtn.textContent === "Add to shopping list") {
+    onAddBtnClick();
+    showNotification('Congratulations! You have added the book to the shopping list. To delete, press the button “Remove from the shopping list”.');
+    expandModalContent();
+  } else {
+    hideNotification();
+    collapseModalContent();
+    onDeleteBtnClick(bookId);  // Pass bookId to onDeleteBtnClick
+    shoppingListBtn.textContent = "Add to shopping list";
+  }
+}
+
+async function onAddBtnClick() {
+  // Отримати поточний масив об'єктів з localStorage
+  const jsonString = localStorage.getItem(STORAGE_KEY);
+  let currentArray;
+
+  try {
+    currentArray = jsonString ? JSON.parse(jsonString) : [];
+  } catch (error) {
+    console.log('Помилка при парсингу JSON:', error);
+    return;
   }
 
-  function addToShoppingList(bookId, storedBooks) {
-    storedBooks[bookId] = addedBook;  
-    localStorage.setItem(STORAGE_KEY, JSON.stringify(storedBooks));
-    onAddBtnClick();
-    shoppingListBtn.textContent = "Remove from the shopping list";
-    // console.log(bookId);
-    // console.log(storedBooks[bookId]);
+  // Створити новий об'єкт з dataId
+  const newObject = {
+    dataId: dataId, // Функція для генерації унікального ID
+  };
+
+  // Перевірити, чи існує вже такий об'єкт в масиві
+  if (currentArray.every(item => item.dataId !== newObject.dataId)) {
+    currentArray.push(newObject);
+
+    // Перетворити масив JavaScript в JSON-рядок
+    const updatedJsonString = JSON.stringify(currentArray);
+
+    // Зберегти JSON-рядок в localStorage
+    try {
+      localStorage.setItem(STORAGE_KEY, updatedJsonString);
+    } catch (error) {
+      console.log('Помилка при зберіганні даних:', error);
+    }
+  }
+  shoppingListBtn.textContent = "Remove from the shopping list";
 }
 
-    
-function removeFromShoppingList(bookId, storedBooks) {
-  delete storedBooks[bookId];
-  localStorage.setItem(STORAGE_KEY, JSON.stringify(storedBooks));
-  shoppingListBtn.textContent = "Add to shopping list";
-  hideNotification();
-}
+async function onDeleteBtnClick(bookId) {
+  const storedBooks = JSON.parse(localStorage.getItem(STORAGE_KEY)) || [];
+  const bookIndex = storedBooks.findIndex(item => item.dataId === dataBookId); // Find book by dataId
 
+  if (bookIndex !== -1) {
+    storedBooks.splice(bookIndex, 1); // Remove the book from the array
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(storedBooks)); // Update localStorage
+    shoppingListBtn.textContent = "Add to shopping list";
+  } else {
+    console.log('Book with dataId:', dataBookId, 'not found in localStorage');
+  }
+}
 
   function showNotification(message) {
       notification.innerHTML = `<span>${message}</span>`;
@@ -88,13 +118,6 @@ function removeFromShoppingList(bookId, storedBooks) {
   }
 
   function openModal(bookId) {
-      const storedBooks = JSON.parse(localStorage.getItem('books_for_list')) || {};
-
-      if (storedBooks[bookId]) {
-          shoppingListBtn.textContent = "Remove from the shopping list";
-      } else {
-          shoppingListBtn.textContent = "Add to shopping list";
-      }
 
       loadBookData(bookId);
       modal.style.display = 'block';
@@ -152,3 +175,7 @@ function fillModalContent(book) {
   }
 
 }
+setInterval(()=>{
+  console.log(localStorage);
+  // localStorage.clear();
+},2000)
