@@ -4,13 +4,13 @@ import axios from 'axios';
 
 export const STORAGE_KEY = "local-storage-books";   // назву залишити
 
-const bookId = "643282b1e85766588626a085";      // ключ -id
+// const bookId = "643282b1e85766588626a085";      // ключ -id
 
 
 // const addBn = document.querySelector('.added');
 // console.log(addBn);
 // addBn.addEventListener('click', onAddBtnClick);
-async function onAddBtnClick() {
+export async function onAddBtnClick() {
 
     // Получаем текущий массив объектов из localStorage
     const jsonString = localStorage.getItem(STORAGE_KEY);
@@ -33,7 +33,7 @@ async function onAddBtnClick() {
     };
 }
 
-async function getbook(bookId) {
+export async function getbook(bookId) {
     const BASE_URL = `https://books-backend.p.goit.global/books/${bookId}`;
       
     try {
@@ -47,7 +47,7 @@ async function getbook(bookId) {
 };
 
 
-onAddBtnClick(STORAGE_KEY);
+// onAddBtnClick(STORAGE_KEY);
 
 
 
