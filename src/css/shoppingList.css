@@ -11,6 +11,7 @@ p {
 p:last-child {
     margin-bottom: 0;
 }
+
 :root {
     font-family: Inter, Avenir, Helvetica, Arial, sans-serif;
     font-size: 16px;
@@ -59,12 +60,13 @@ body {
     margin: 0;
     background-color: var(--light-background);
 }
+
 .slist-section {
-    margin-top: 40px;
+    margin-bottom: 40px;
     max-width: 335px;
     margin-left: auto;
     margin-right: auto;
-    
+
 }
 
 .demo-header {
@@ -77,7 +79,7 @@ body {
 }
 
 .is-hidden {
-  display: none;
+    display: none;
 }
 
 .logo {
@@ -86,89 +88,53 @@ body {
 }
 
 
-
-    .slist-tittle-container{
-        display: block;
-        margin-left: 0;
-        margin-bottom: 40px;
-    }
-  
-
-    .slist-header {
-        
-        font-family: "DM Sans", sans-serif;
-        font-weight: 700;
-        font-size: 32px;
-        line-height: 38px;
-        letter-spacing: -0.04em;
-        color: var(--black-color);
-    }
-
-
-/* 
-/* PAGE */
-
-.slist-section {
-    margin-top: 112px;
-    max-width: 335px;
-    margin-left: auto;
-    margin-right: auto;
+.slist-tittle-container {
+    display: block;
+    margin-left: 0;
+    margin-bottom: 40px;
 }
 
-    .slist-tittle-container{
-              
-    margin-bottom: 40px;
-    }
-   
 
-   .slist-header-container {
-       display: block;
-       margin-left: 0;
-       margin-bottom: 40px;
-   }
+.slist-header {
 
-   .slist-header {
+    font-family: "DM Sans", sans-serif;
+    font-weight: 700;
+    font-size: 32px;
+    line-height: 38px;
+    letter-spacing: -0.04em;
+    color: var(--black-color);
+}
 
-       font-family: "DM Sans", sans-serif;
-       font-weight: 700;
-       font-size: 32px;
-       line-height: 38px;
-       letter-spacing: -0.04em;
-       color: var(--black-color);
-   } */
+.slist-header-span {
+    color: var(--violet);
+}
 
 
-    .slist-header-span {
-        color: var(--violet);
-    }
+.slist-demo-thumb {
+    margin: 80px auto 0 auto;
+    width: 265px;
+    height: 248px;
+}
 
-
-    .slist-demo-thumb {
-        margin: 80px auto 0 auto;
-        width: 265px;
-        height: 248px;
-    }
-
-    .slist-demo-text {
-        display: inline-block;
-        margin-top: 0;
-        margin-bottom: 14px;
-        margin-left: auto;
-        margin-right: auto;
-        font-weight: 400;
-        font-size: 14px;
-        line-height: 1.28571;
-        letter-spacing: -0.02em;
-        text-align: center;
-        color: rgba(0, 0, 0, 0.6);
-    }
+.slist-demo-text {
+    display: inline-block;
+    margin-top: 0;
+    margin-bottom: 14px;
+    margin-left: auto;
+    margin-right: auto;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 1.28571;
+    letter-spacing: -0.02em;
+    text-align: center;
+    color: rgba(0, 0, 0, 0.6);
+}
 
 
 
 
 
-    /* book card*/
-
+/* book card*/
 
 
 .slist-card-item {
@@ -182,171 +148,160 @@ body {
     width: 335px;
     height: 170px;
     background-color: #fff;
-    }
+}
 
 
 
+.slist-del-btn {
+    position: absolute;
+    top: 14px;
+    right: 14px;
+    border: none;
+    background-image: url("../img/dump.png");
+    background-position: center;
+    background-size: 28px;
+    background-color: transparent;
+    width: 28px;
+    height: 28px;
+    cursor: pointer;
+    /* border-radius: 50%; */
+    /* background-color: #4f2ee8; */
+}
 
-    .slist-del-btn {
-        position: absolute;
-        top: 14px;
-        right: 14px;
-        border: none;
-        background-image: url("../img/dump.png");
-        background-position: center;
-        background-size: 28px;
-        background-color: transparent;
-        width: 28px;
-        height: 28px; 
-        cursor: pointer;
-        /* border-radius: 50%; */ 
-        /* background-color: #4f2ee8; */
-    }
-
-    /* .slist-del-btn-img {
+/* .slist-del-btn-img {
         width: 28px;
         height: 28px;
 
     } */
 
-    .slist-card-item {
-        display: flex;
-        gap: 14px;
-        margin-top:
-    }
+.slist-card-item {
+    display: flex;
+    gap: 14px;
+    margin-top:
+}
 
-    .slist-card-picture {
-        border-radius: 8px;
-        width: 100px;
-        height: 142px;
-    }
+.slist-card-picture {
+    border-radius: 8px;
+    width: 100px;
+    height: 142px;
+}
 
-    .slist-book-img {
-        
-        height: 142px;
-        border-radius: 8px;
-        
-    }
+.slist-book-img {
 
-    .slist-info-container {
-        display: flex;
-        flex-direction: column;
-        flex-wrap: nowrap;
-        align-items: flex-start;
-    }
-
-    .slist-book-header {
-        /* display: inline-block; */
-        max-width: 144px;
-        margin-bottom: 4px;
-        height: 18px;
-        margin-top: 0;
-        overflow: auto;
-        font-family: "DM Sans", sans-serif;
-        font-weight: 700;
-        font-size: 16px;
-        line-height: 1.125;
-        letter-spacing: -0.04em;
-        text-transform: uppercase;
-        color: var(--black-color);
-
-    }
-
-    .slist-book-category {
-        /* display: inline-block; */
-        max-width: 165px;
-        height: 14px;
-        margin-bottom: 8px;
-        font-family: "DM Sans", sans-serif;
-        font-weight: 400;
-        font-size: 12px;
-        line-height: 1.16667;
-        letter-spacing: 0.03em;
-        color: var(--ligth-text-color);
-    }
-
-    .slist-book-description {
-        display: -webkit-box;
-        -webkit-line-clamp: 3;
-        -webkit-box-orient: vertical;
-        overflow: auto;
-        visibility: visible;
-        margin-top: 0;
-        margin-bottom: 16px;
-        max-width: 193px;
-        height: 68px;
-        font-family: "DM Sans", sans-serif;
-        font-weight: 400;
-        font-size: 14px;
-        line-height: 1.28571;
-        letter-spacing: -0.04em;
-        color: var(--black-color);
-    }
-
-
-
-    .slist-book-autor {
-        display: inline-block;
-        font-family: "DM Sans", sans-serif;
-        font-style: italic;
-        font-weight: 400;
-        font-size: 12px;
-        line-height: 1.16667;
-        letter-spacing: -0.04em;
-        color: var(--ligth-text-color);
-    }
-
-
-    .slist-nav-list {
-        position: absolute;
-        bottom: 14px;
-        right: 14px;
-        display: flex;
-        align-items: flex-end;
-        gap: 3px;
-        padding: 0;
-        margin: 0;
-
-    }
-
-    .img-amazone {
-        width: 32px;
-        height: 11px;
-    }
-
-    .img-app {
-        width: 16px;
-        height: 16px;
-    }
-
-@media screen and (max-width: 767px) {
+    height: 142px;
+    border-radius: 8px;
 
 }
+
+.slist-info-container {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-items: flex-start;
+}
+
+.slist-book-header {
+    /* display: inline-block; */
+    max-width: 144px;
+    margin-bottom: 4px;
+    height: 18px;
+    margin-top: 0;
+    font-family: "DM Sans", sans-serif;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 1.125;
+    letter-spacing: -0.04em;
+    text-transform: uppercase;
+    color: var(--black-color);
+
+}
+
+.slist-book-category {
+    /* display: inline-block; */
+    max-width: 165px;
+    height: 14px;
+    margin-bottom: 8px;
+    font-family: "DM Sans", sans-serif;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 1.16667;
+    letter-spacing: 0.03em;
+    color: var(--ligth-text-color);
+}
+
+.slist-book-description {
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: auto;
+    visibility: visible;
+    margin-top: 0;
+    margin-bottom: 16px;
+    max-width: 193px;
+    height: 68px;
+    font-family: "DM Sans", sans-serif;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 1.28571;
+    letter-spacing: -0.04em;
+    color: var(--black-color);
+}
+
+
+
+.slist-book-autor {
+    display: inline-block;
+    font-family: "DM Sans", sans-serif;
+    font-style: italic;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 1.16667;
+    letter-spacing: -0.04em;
+    color: var(--ligth-text-color);
+}
+
+
+.slist-nav-list {
+    position: absolute;
+    bottom: 14px;
+    right: 14px;
+    display: flex;
+    align-items: flex-end;
+    gap: 3px;
+    padding: 0;
+    margin: 0;
+
+}
+
+.img-amazone {
+    width: 32px;
+    height: 11px;
+}
+
+.img-app {
+    width: 16px;
+    height: 16px;
+}
+
+@media screen and (max-width: 767px) {}
 
 
 
 @media screen and (min-width: 768px) {
 
-
     .header-container {
-            min-width: 704px;
-           
-        }
+        min-width: 704px;
+
+    }
 
     .slist-section {
-            margin-top: 40px;
-
-            max-width: 704px;
-            margin-left: auto;
-            margin-right: auto;
-        }
+        margin-top: 40px;
+        max-width: 704px;
+        margin-left: auto;
+        margin-right: auto;
+    }
 
     .slist-header {
-
-        /* display: inline-block; */
-        /* margin-top: 40px;
-        margin-bottom: 40px;
-        margin-left: 32px; */
 
         font-family: "DM Sans", sans-serif;
         font-weight: 700;
@@ -380,21 +335,19 @@ body {
     /* book card*/
 
 
+    .slist-card-item {
+        display: flex;
+        gap: 20px;
+        padding: 24px;
+        width: 704px;
+        height: 213px;
 
-   .slist-card-item {
-       display: flex;
-       gap: 20px;
-       padding: 24px;
-       width: 704px;
-       height: 213px;
-
-   }
-
+    }
 
     .slist-del-btn {
         top: 24px;
         right: 24px;
-      
+
     }
 
     .slist-del-btn-img {
@@ -402,7 +355,7 @@ body {
         height: 34px;
 
     }
-   
+
 
     .slist-card-picture {
         border-radius: 8px;
@@ -414,7 +367,7 @@ body {
         border-radius: 8px;
         width: 116px;
         height: 165px;
-        
+
 
     }
 
@@ -467,19 +420,14 @@ body {
 
 @media screen and (min-width: 1440px) {
 
-.slist-section {
+    .slist-section {
         margin-top: 112px;
-
         width: 996px;
         margin-left: 420px;
         margin-right: auto;
-      
-       
-
-
     }
 
-  
+
 
     .slist-demo-thumb {
         margin-top: 100px;
@@ -493,19 +441,16 @@ body {
 
 
     .slist-card-item {
-        
+
         margin-right: 24px;
-        padding:24px;
+        padding: 24px;
         width: 996px;
         height: 213px;
 
     }
 
 
-  /* .slist-card-list{
-    margin-right: 0;
-    margin-left: 0;
-  } */
+
 
     .slist-book-header {
 
