@@ -30,10 +30,10 @@ renderImages(array);     //рендеримо розмітку
   
 
 
-function imageTemplate({ id, book_image,title,list_name,description,author,amazonURL,appleURL}) {
+function imageTemplate({ _id, book_image,title,list_name,description,author,amazonURL,appleURL}) {
   return `<div class="slist-card-list">
             <div class="slist-card-item">
-              <button type="button" data-id=${id} class="slist-del-btn js-slist-del-btn">
+              <button type="button" data-id=${_id} class="slist-del-btn js-slist-del-btn">
               </button>
               <div class="slist-card-picture">
                 <img src="${book_image}" class="slist-book-img" alt="books" />
