@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/js_98_Dima2430/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vanilla App Template</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap"
+      rel="stylesheet"
+    />
+    <script type="module" crossorigin src="/js_98_Dima2430/commonHelpers.js"></script>
+    <link rel="modulepreload" crossorigin href="/js_98_Dima2430/assets/header-1d09e868.js">
+    <link rel="modulepreload" crossorigin href="/js_98_Dima2430/assets/vendor-169f9f98.js">
+    <link rel="stylesheet" href="/js_98_Dima2430/assets/vendor-a51daae5.css">
+    <link rel="stylesheet" href="/js_98_Dima2430/assets/index-fbce1a9c.css">
+  </head>
+  <body>
+    <header class="header">
+  <div class="container header-container">
+    <nav class="header-naviganion">
+      <a class="header-logo" href="">
+        <svg class="logo-icon" width="24" height="24">
+          <use href="/js_98_Dima2430/assets/symbol-defs-eb974af8.svg#icon-logo-1"></use>
+        </svg>
+        <svg class="logo-text-icon" width="77" height="13">
+          <use href="/js_98_Dima2430/assets/symbol-defs-eb974af8.svg#icon-Bookshelf"></use>
+        </svg>
+      </a>
+      <ul class="header-menu">
+        <li class="header-item">
+          <a class="header-menu-link activeButton" href="./index.html">Home</a>
+        </li>
+        <li class="header-item">
+          <a class="header-menu-shopping" href="./shoppingList.html"> Shopping List
+            <svg class="basket-icon" width="20" height="20">
+              <use href="/js_98_Dima2430/assets/symbol-defs-eb974af8.svg#icon-Vector"></use>
+            </svg>
+          </a>
+        </li>
+      </ul>
+    </nav>
+    <div class="box-btn">
+      <div class="theme-switch">
+        <input class="theme-switch-input" type="checkbox" id="checkbox">
+        <label class="theme-toggle" for="checkbox"></label>
+        <div class="slider"></div>
+      </div>
+
+      
+      <!-- -------Authorization------ >  -->
+      <button type="button" class="signup-btn">
+        Sign up
+        <svg class="sign-arrow" width="20" height="20">
+          <use href="/js_98_Dima2430/assets/symbol-defs-eb974af8.svg#icon-arrow-narrow-right"></use>        
+          </svg>
+      </button>
+         <!-- Mob menu  -->
+           <button type="button" class="menu-open-btn">
+        <svg class="menu-open-icon" width="28" height="28">
+          <use href="/js_98_Dima2430/assets/symbol-defs-eb974af8.svg#icon-align-left"></use>
+        </svg>
+      </button>
+         <button type="button" class="menu-close-btn hidden">
+        <svg class="menu-close-icon" width="28" height="28">
+          <use href="/js_98_Dima2430/assets/symbol-defs-eb974af8.svg#icon-x-close"></use>
+        </svg>
+      </button>
+      
+      
+    </div>
+    
+  </div>
+ 
+</header>
+
+
+    
+          
+              
+             
+          
+              
+  
+
+   
+    <main>
+      <div class="form-container">
+  <div class="form">
+    <button class="close-btn">
+      <svg class="firebase-btn" width="12" height="12">
+        <use href="../img/icons.svg#icon-x-close-min"></use>
+      </svg>
+    </button>
+    <form action="/submit" method="post">
+      <input type="text" name="name" placeholder="NAME" required />
+      <input type="email" name="email" placeholder="EMAIL" required />
+      <input type="password" name="password" placeholder="PASSWORD" required />
+      <button class="signup-btn-form" type="submit">SIGN UP</button>
+    </form>
+    <div class="">SIGN UP | SIGN IN</div>
+  </div>
+</div>
+
+                                                          <!-- TEST onclick="loadBookData('643282b1e85766588626a0c2')"   id="openModalBtn"-->
+<!-- <a class="test" id="openModalBtn" data-book-id="643282b1e85766588626a0c2">Відкрити вікно</a> -->
+
+<div id="myModal" class="modal">
+    <div class="modal-content">  
+        <span class="close" id="closeModalBtn">
+            <svg width="24" height="24" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M21 7L7 21M7 7L21 21" stroke="#111111" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+        </span>
+        <div class="content">  
+                <img alt="Book cover" class="img_modal"  src="" width=192px height=281px/>
+
+                <div class="text">
+                    <h3 class="book_name"></h3>
+                    <p class="author"></p>
+                    <p class="description"></p>
+                    <ul class="links">
+                        <li><a href="" target="_blank" name="Amazon"><img width="62px" height="19px" class="logo" src="../img/amazon.png" alt="Amazon"></a></li>
+                        <li><a href="" target="_blank" name="Apple Books"><img width="33px" height="32px" class="logo" src="../img/ibook.png" alt="Apple Books"></a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- <span class="close" id="closeModalBtn">
+                <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21 7L7 21M7 7L21 21" stroke="#111111" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+            </span> -->
+        
+        <div class="button_place">
+            <button class="button_mod" id="shoppingListBtn" >Add to shopping list</button> 
+        </div>
+        <div id="notification" class="notification"></div>
+    </div>
+</div>
+      <div class="home-page-container">
+  <section class="sidebar">
+  <div class="sidebar-categories">
+    <ul class="sidebar-categories-list">
+      <li class="sidebar-categories-item">
+        <button type="button" class="categories-button">ALL CATEGORIES</button>
+    </li>
+      <li class="sidebar-categories-item">
+        <a href="" class="sidebar-categories-link"
+          >Combined Print and E-book Fiction</a
+        >
+      </li>
+      <li class="sidebar-categories-item">
+        <a href="" class="sidebar-categories-link"
+          >Combined Print & E-book Nonfiction</a
+        >
+      </li>
+      <li class="sidebar-categories-item">
+        <a href="" class="sidebar-categories-link">Hardcover fiction</a>
+    </li>
+      <li class="sidebar-categories-item">
+        <a href="" class="sidebar-categories-link">Hardcover nonfiction</a>
+      </li>
+      <li class="sidebar-categories-item">
+        <a href="" class="sidebar-categories-link">Paperback trade fiction</a>
+      </li>
+      <li class="sidebar-categories-item">
+        <a href="" class="sidebar-categories-link">Paperback nonfiction</a>
+      </li>
+      <li class="sidebar-categories-item">
+        <a href="" class="sidebar-categories-link"
+          >Advice, how-to & Miscellaneous</a
+        >
+      </li>
+      <li class="sidebar-categories-item">
+        <a href="" class="sidebar-categories-link"
+          >Children's middle grade hardcover</a
+        >
+      </li>
+      <li class="sidebar-categories-item">
+        <a href="" class="sidebar-categories-link"
+          >Business bool</a
+        >
+      </li>
+      <li class="sidebar-categories-item">
+        <a href="" class="sidebar-categories-link"
+          >Audio fiction</a
+        >
+      </li>
+      <li class="sidebar-categories-item">
+        <a href="" class="sidebar-categories-link"
+          >Mass Market Monthly</a
+        >
+      </li>
+      <li class="sidebar-categories-item">
+        <a href="" class="sidebar-categories-link"
+          >Series book</a
+        >
+      </li>
+      <li class="sidebar-categories-item">
+        <a href="" class="sidebar-categories-link"
+          >Picture book</a
+        >
+      </li>
+    </ul>
+  </div>
+
+<div class="block">
+    <div class="block-title-wrapper">
+      <h1 class="block-title">Support Ukraine</h1>
+      <svg class="support-title-icon" width="20" height="32">
+        <use href="/js_98_Dima2430/assets/symbol-defs-eb974af8.svg#symbol"></use>
+      </svg>
+    </div>
+    <div class="swiper">
+      <ul class="support-list swiper-wrapper"></ul>
+    </div>
+    <button type="button" class="support-button">
+      <svg class="support-icon" width="20" height="20">
+        <use href="/js_98_Dima2430/assets/symbol-defs-eb974af8.svg#arrow"></use>
+      </svg>
+    </button>
+</div>
+</section>
+  <div class="best-books-gallery" id="container"></div>
+</div>
+
+      <div class="loader"></div>
+
+
+      <div class="menu-modal">
+    <div class="name-caption">
+        <img src="" alt="" class="menu-user-img">
+        <p class="menu-user-name">userName</p>
+    </div>
+    <button class="menu-signup-btn">Sign up</button>
+    <div class="menu-central-links">
+        <a href="./index.html" class="menu-home-link">Home</a>
+        <div class="menu-shopping-caption">
+            <a href="./shoppingList.html" class="menu-list-link">Shopping list</a>
+            <svg class="menu-shopping-svg" width="20" height="20">
+                <use href="/js_98_Dima2430/assets/symbol-defs-eb974af8.svg#icon-Vector"></use>
+            </svg>
+        </div>
+    </div>
+    <button class="menu-logout-btn">Log out</button>
+    <div class="menu-background-image"></div>
+</div>
+      
+      <div class="scroll-btn">
+    <svg class="scrollup-svg" width="18" height="12">
+        <use href="/js_98_Dima2430/assets/icons-1f2b14d6.svg#icon-scrollUp"></use>
+    </svg>
+</div>
+
+      <!-- <select name="categories" id="categories">
+<option value="Trade Fiction Paperback">Trade Fiction Paperback</option>
+<option value="Series Books">Series Books</option>
+<option value="Hardcover fiction">Hardcover fiction</option>
+<option value="Hardcover nonfiction">Hardcover nonfiction</option>
+<option value="Paperback trade fiction">Paperback trade fiction</option>
+<option value="Paperback nonfiction">Paperback nonfiction</option>
+<option value="Advice, how-to & Miscellaneous">Advice, how-to & Miscellaneous</option>
+</select>
+<button type="button" class="buttonChoose">choose</button>
+<script src="../js/categories.js" type="module"></script>
+
+<div id="books-container"></div> -->
+
+
+    </main>
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+  </body>
+</html>
