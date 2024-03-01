@@ -1,5 +1,7 @@
 import axios from 'axios';
 
+import axios from 'axios';
+
 const slistGalleryEl = document.querySelector('.slist-card-section');
 const background = document.querySelector('.slist-demo-thumb');
 
@@ -25,6 +27,7 @@ function loadFromLS(key) {
 };
 const arrOfId = loadFromLS(STORAGE_KEY);
 
+
 renderImages(arrOfId);     //рендеримо розмітку
 
 async function renderImages(array) {
@@ -48,6 +51,8 @@ async function renderImages(array) {
     } 
 };
 
+
+  
 function imageTemplate({ _id, book_image,title,list_name,description,author,amazonURL,appleURL}) {
   return `<div class="slist-card-list">
             <div class="slist-card-item">
@@ -67,13 +72,13 @@ function imageTemplate({ _id, book_image,title,list_name,description,author,amaz
                     <li class="slist-nav-item">
                       <a href="${amazonURL}" class="slist-nav-link">
 
-                      <img class="img-amazone logo" src="./img/amazon.png" alt="app">
+                      <img class="img-amazone logo" src="./img/amazonicon.png" alt="app">
                      </a>
 
                     </li>
 
                     <li class="slist-nav-item">
-                      <a href="${appleURL}" class="slist-nav-link"><img class="img-app logo" src="./img/ibook.png" alt="app"></a>
+                      <a href="${appleURL}" class="slist-nav-link"><img class="img-app logo" src="./img/appbook.png" alt="app"></a>
                       
                     </li>
                   </ul>
@@ -88,6 +93,7 @@ function imageTemplate({ _id, book_image,title,list_name,description,author,amaz
 };
 
 
+
           
 
  async function onBtnClick(e) {
@@ -96,8 +102,9 @@ function imageTemplate({ _id, book_image,title,list_name,description,author,amaz
   
     let bookItemId = (e.target.dataset.id);//знаходимо по ід на кнопку повішену
    
-    const jsonString = localStorage.getItem(STORAGE_KEY);
+    const jsonString = localStorage.getItem(myStoreKey);
     let currentArray = JSON.parse(jsonString);
+
            
        
     if (currentArray.length <= 1) {
@@ -116,6 +123,7 @@ function imageTemplate({ _id, book_image,title,list_name,description,author,amaz
       localStorage.setItem(STORAGE_KEY, updatedJsonString)
       renderImages((newArr.map(item => item.dataId)));
       
+
     };
         
       
@@ -123,6 +131,7 @@ function imageTemplate({ _id, book_image,title,list_name,description,author,amaz
 
 
 };
+
 
 
 

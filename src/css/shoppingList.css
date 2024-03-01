@@ -98,7 +98,9 @@ body {
 
 .side-container {
 
-    display: none;
+
+display: none;
+
 }
 
 
@@ -437,11 +439,13 @@ body {
         margin-right: auto;
     }
 
-    .side-container {
-        display: block;
-        position: absolute;
-        right: 740px;
-    }
+
+        .side-container {
+            display: block;
+            position: absolute;
+           right: 740px;            
+        }
+
 
     .slist-demo-thumb {
         margin-top: 140px;

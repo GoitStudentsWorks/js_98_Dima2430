@@ -1,6 +1,6 @@
 .category-books-cat{
     display: flex;
-    justify-content: center;
+    justify-content: start;
     align-items: center;
     gap: 25px;
     margin-bottom: 20px;
