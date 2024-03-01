@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "vite build --base=/book.store/",
+    "build": "vite build --base=/js_98_Dima2430/",
     "preview": "vite preview"
   },
   "devDependencies": {
