@@ -21,9 +21,11 @@ body.dark-theme .slist-demo-text {
 body.dark-theme .slist-header-span {
   color: #4f2ee8;
 }
+
 body.dark-theme .slist-card-item {
   color: #111;
 }
+
 
 body.light-theme .slist-header-span {
   color: #4f2ee8;
@@ -65,8 +67,19 @@ body.dark-theme .modal-content {
 body.dark-theme .button_mod {
   background-color: #111;
 }
+body.dark-theme .slist-book-category {
+  color: #b4afaf;
+}
+
+body.dark-theme .slist-book-autor {
+  color: #b4afaf;
+}
 
 body.dark-theme .description {
+  color: #fff;
+}
+
+body.dark-theme .slist-book-header {
   color: #fff;
 }
 
@@ -74,8 +87,7 @@ body.dark-theme .book_name {
   color: #fff;
 }
 body.dark-theme .logo {
-
-  color: #fff;
+ color: #fff;
 }
 
 body.dark-theme h1 {
