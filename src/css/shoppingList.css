@@ -89,7 +89,7 @@ body {
 
 
 .slist-tittle-container {
-    
+
     display: block;
     margin-left: 0;
     margin-bottom: 40px;
@@ -98,7 +98,9 @@ body {
 
 .side-container {
 
+
 display: none;
+
 }
 
 
@@ -213,6 +215,7 @@ display: none;
     margin-bottom: 4px;
     height: 18px;
     margin-top: 0;
+    overflow: auto;
     font-family: "DM Sans", sans-serif;
     font-weight: 700;
     font-size: 16px;
@@ -302,7 +305,7 @@ display: none;
     }
 
     .slist-section {
-       
+
         margin-bottom: 40px;
         max-width: 704px;
         margin-left: auto;
@@ -436,11 +439,13 @@ display: none;
         margin-right: auto;
     }
 
+
         .side-container {
             display: block;
             position: absolute;
            right: 740px;            
         }
+
 
     .slist-demo-thumb {
         margin-top: 140px;

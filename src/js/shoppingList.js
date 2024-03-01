@@ -1,3 +1,4 @@
+import axios from 'axios';
 
 import axios from 'axios';
 
@@ -8,8 +9,7 @@ const background = document.querySelector('.slist-demo-thumb');
 // import { STORAGE_KEY } from "./local-storage"          //ключ
 const STORAGE_KEY = "local-storage-books"; 
 let booksIDarray = [];
-const myStoreKey = "my-key";  
-let myLsArr = [];
+
 
 //  закидаємо до ЛС обєкт 
 function loadFromLS(key) {
@@ -27,63 +27,30 @@ function loadFromLS(key) {
 };
 const arrOfId = loadFromLS(STORAGE_KEY);
 
-//  оновлюємо ЛС зі своїм ключем і розміткою
 
-updateLocalStorage(booksIDarray); 
+renderImages(arrOfId);     //рендеримо розмітку
 
-async function updateLocalStorage(array) {
-   
-  if (array.length === 0 ) {
+async function renderImages(array) {
+   let booksArr = [];
+  if (array === null || array.length===0 || !STORAGE_KEY) {
     
-    showbackground(); 
-  } else {
+      showbackground(); 
       
+  } else {
       for (const item of array) {
-          console.log(item);
-        const currentBook = await getbook(item);
-        console.log(currentBook);
-        myLsArr.push(currentBook);
-        const updatedJsonString = JSON.stringify(myLsArr);
-
-        // зберігаємо строку JSON в localStorage під ключем
-        localStorage.setItem(myStoreKey, updatedJsonString);
+          
+          
+          const currentBook = await getbook(item);
+          booksArr.push(currentBook);
+        //   return booksArr;
+           
       }
-    
+           const markup = imagesTemplate(booksArr);
+            slistGalleryEl.innerHTML = markup;
+            slistGalleryEl.addEventListener('click', onBtnClick);
     } 
 };
 
-async function getbook(bookId) {
-    const BASE_URL = `https://books-backend.p.goit.global/books/${bookId}`;
-    
-    try {
-        const res = await axios.get(BASE_URL);
-        console.log(res.data);
-        return res.data;
-
-   
-    } catch (error) {
-        console.log('Результатів не знайдено.');
-    };
-
-};
- 
-// витягуємо зі свого ЛС та рендеримо
-
-function loadFromMYLS(key) {
-  try {
-   
-      const data = localStorage.getItem(key);
-      const result = JSON.parse(data);
-        return result;
-  } catch {console.log('error');
-    showbackground(); }
-         
-};
-
-   
-const array = loadFromMYLS(myStoreKey);
-
-renderImages(array);     //рендеримо розмітку
 
   
 function imageTemplate({ _id, book_image,title,list_name,description,author,amazonURL,appleURL}) {
@@ -120,49 +87,43 @@ function imageTemplate({ _id, book_image,title,list_name,description,author,amaz
             </div>
           </div>`};
 
-
-
-function imagesTemplate(array) {
+          function imagesTemplate(array) {
   return array.map(imageTemplate).join('');
       
 };
 
-function renderImages(array) {
-   
-  if (array === null || array === [] || !myStoreKey) {
-    
-    showbackground(); 
-  } else {
-   const markup = imagesTemplate(array);
-  slistGalleryEl.innerHTML = markup;
-    slistGalleryEl.addEventListener('click', onBtnClick);
-    } // ставимо слухача на форму
-};
 
 
+          
 
  async function onBtnClick(e) {
    if (e.target.nodeName === 'BUTTON') {
     console.log(e.target.dataset.id);
   
-    let bookId = (e.target.dataset.id);//знаходимо по ід на кнопку повішену
+    let bookItemId = (e.target.dataset.id);//знаходимо по ід на кнопку повішену
    
     const jsonString = localStorage.getItem(myStoreKey);
     let currentArray = JSON.parse(jsonString);
-    localStorage.removeItem(myStoreKey)
-     currentArray.splice(
-      currentArray.findIndex(item => item.id === bookId),
-      1
-    );
-    console.log(currentArray);
-    if (currentArray.length < 1) {
-      localStorage.removeItem(myStoreKey);
+
+           
+       
+    if (currentArray.length <= 1) {
+      localStorage.removeItem(STORAGE_KEY);
       slistGalleryEl.innerHTML = "";
       showbackground(); 
-    } else {
-    const updatedJsonString = JSON.stringify(currentArray);
-      localStorage.setItem(myStoreKey, updatedJsonString);
-      renderImages(currentArray);
+    }
+    else {
+        localStorage.removeItem(STORAGE_KEY);
+     let newArr = currentArray.splice(
+      currentArray.findIndex(item => item.id === bookItemId),
+      1
+       );
+      slistGalleryEl.innerHTML = "";
+      const updatedJsonString = JSON.stringify(newArr)
+      localStorage.setItem(STORAGE_KEY, updatedJsonString)
+      renderImages((newArr.map(item => item.dataId)));
+      
+
     };
         
       
@@ -170,6 +131,25 @@ function renderImages(array) {
 
 
 };
+
+
+
+
+
+async function getbook(bookId) {
+    const BASE_URL = `https://books-backend.p.goit.global/books/${bookId}`;
+    
+    try {
+        const res = await axios.get(BASE_URL);
+        return res.data;
+
+   
+    } catch (error) {
+        console.log('Результатів не знайдено.');
+    };
+
+};
+
 
 function hidebackground() {
     background.classList.add('is-hidden');
@@ -180,5 +160,10 @@ function showbackground() {
   background.classList.remove('is-hidden');
 
 };
+
+
+
+
+
 
 
