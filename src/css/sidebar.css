@@ -137,6 +137,10 @@ body {
   gap: 32px;
 }
 
+.sidebar-categories {
+    margin-bottom: 86px;
+}
+
 .sidebar-categories-list {
   list-style: none;
   display: flex;
