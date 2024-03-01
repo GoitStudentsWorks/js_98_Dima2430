@@ -1,34 +1,52 @@
+import axios from 'axios';
 
 const slistGalleryEl = document.querySelector('.slist-card-section');
 const background = document.querySelector('.slist-demo-thumb');
-// console.log(slistGalleryEl);
 
 
+// import { STORAGE_KEY } from "./local-storage"          //ключ
+const STORAGE_KEY = "local-storage-books"; 
+let booksIDarray = [];
 
-import { STORAGE_KEY } from "./local-storage"          //ключ
-                
- 
+
+//  закидаємо до ЛС обєкт 
 function loadFromLS(key) {
   try {
    
       const data = localStorage.getItem(key);
       const result = JSON.parse(data);
-        return result;
+      console.log(result);
+      booksIDarray = result.map(item => item.dataId);   
+      console.log(booksIDarray);
+        return booksIDarray;
   } catch {console.log('error');
     showbackground(); }
          
 };
+const arrOfId = loadFromLS(STORAGE_KEY);
 
-   
+renderImages(arrOfId);     //рендеримо розмітку
 
-const array = loadFromLS(STORAGE_KEY);
-
-  
-
-renderImages(array);     //рендеримо розмітку
-
-  
-
+async function renderImages(array) {
+   let booksArr = [];
+  if (array === null || array.length===0 || !STORAGE_KEY) {
+    
+      showbackground(); 
+      
+  } else {
+      for (const item of array) {
+          
+          
+          const currentBook = await getbook(item);
+          booksArr.push(currentBook);
+        //   return booksArr;
+           
+      }
+           const markup = imagesTemplate(booksArr);
+            slistGalleryEl.innerHTML = markup;
+            slistGalleryEl.addEventListener('click', onBtnClick);
+    } 
+};
 
 function imageTemplate({ _id, book_image,title,list_name,description,author,amazonURL,appleURL}) {
   return `<div class="slist-card-list">
@@ -64,49 +82,40 @@ function imageTemplate({ _id, book_image,title,list_name,description,author,amaz
             </div>
           </div>`};
 
-
-
-function imagesTemplate(array) {
+          function imagesTemplate(array) {
   return array.map(imageTemplate).join('');
       
 };
 
-function renderImages(array) {
-   
-  if (array === null || array === [] || !STORAGE_KEY) {
-    
-    showbackground(); 
-  } else {
-   const markup = imagesTemplate(array);
-  slistGalleryEl.innerHTML = markup;
-    slistGalleryEl.addEventListener('click', onBtnClick);
-    } // ставимо слухача на форму
-};
 
-
+          
 
  async function onBtnClick(e) {
    if (e.target.nodeName === 'BUTTON') {
     console.log(e.target.dataset.id);
   
-    let bookId = (e.target.dataset.id);//знаходимо по ід на кнопку повішену
+    let bookItemId = (e.target.dataset.id);//знаходимо по ід на кнопку повішену
    
     const jsonString = localStorage.getItem(STORAGE_KEY);
     let currentArray = JSON.parse(jsonString);
-    localStorage.removeItem(STORAGE_KEY)
-     currentArray.splice(
-      currentArray.findIndex(item => item.id === bookId),
-      1
-    );
-    console.log(currentArray);
-    if (currentArray.length < 1) {
+           
+       
+    if (currentArray.length <= 1) {
       localStorage.removeItem(STORAGE_KEY);
       slistGalleryEl.innerHTML = "";
       showbackground(); 
-    } else {
-    const updatedJsonString = JSON.stringify(currentArray);
-      localStorage.setItem(STORAGE_KEY, updatedJsonString);
-      renderImages(currentArray);
+    }
+    else {
+        localStorage.removeItem(STORAGE_KEY);
+     let newArr = currentArray.splice(
+      currentArray.findIndex(item => item.id === bookItemId),
+      1
+       );
+      slistGalleryEl.innerHTML = "";
+      const updatedJsonString = JSON.stringify(newArr)
+      localStorage.setItem(STORAGE_KEY, updatedJsonString)
+      renderImages((newArr.map(item => item.dataId)));
+      
     };
         
       
@@ -114,6 +123,24 @@ function renderImages(array) {
 
 
 };
+
+
+
+
+async function getbook(bookId) {
+    const BASE_URL = `https://books-backend.p.goit.global/books/${bookId}`;
+    
+    try {
+        const res = await axios.get(BASE_URL);
+        return res.data;
+
+   
+    } catch (error) {
+        console.log('Результатів не знайдено.');
+    };
+
+};
+
 
 function hidebackground() {
     background.classList.add('is-hidden');
@@ -129,35 +156,5 @@ function showbackground() {
 
 
 
-
-
-
-
-//  const addedBook2 = {
-//     id: "643282b1e85766588626a080",
-//     book_image: "https://storage.googleapis.com/du-prd/books/images/9781982185824.jpg",
-//     author: "Harlan Coben",
-//     list_name: "Audio Fiction",
-//     description: "",
-//     title: "FIND YOU",
-//     amazonURL: "https://www.amazon.com/dp/1538748363?tag=NYTBSREV-20",
-//     appleURL: "https://goto.applebooks.apple/9781543661385?at=10lIEQ",
-//     };
-
-
-
-// function saveToLS(STORAGE_KEY, value) {
-//   const jsonData = JSON.stringify(value);
-//   localStorage.setItem(STORAGE_KEY, jsonData);
-// }; 
-
-// function onAddBtnClick() {
-
-    
-//     STORAGE_KEY = addedBook2.id;     // дістаємо id з форми
-//     saveToLS(STORAGE_KEY, addedBook2);
-// };
-
-// saveToLS('643282b1e85766588626a080', addedBook2);
 
 

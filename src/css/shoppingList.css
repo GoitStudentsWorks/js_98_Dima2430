@@ -89,9 +89,16 @@ body {
 
 
 .slist-tittle-container {
+
     display: block;
     margin-left: 0;
     margin-bottom: 40px;
+    margin-top: 40px;
+}
+
+.side-container {
+
+    display: none;
 }
 
 
@@ -206,6 +213,7 @@ body {
     margin-bottom: 4px;
     height: 18px;
     margin-top: 0;
+    overflow: auto;
     font-family: "DM Sans", sans-serif;
     font-weight: 700;
     font-size: 16px;
@@ -295,7 +303,8 @@ body {
     }
 
     .slist-section {
-        margin-top: 40px;
+
+        margin-bottom: 40px;
         max-width: 704px;
         margin-left: auto;
         margin-right: auto;
@@ -421,17 +430,22 @@ body {
 @media screen and (min-width: 1440px) {
 
     .slist-section {
-        margin-top: 112px;
+        position: relative;
+        margin-top: 40px;
         width: 996px;
         margin-left: 420px;
         margin-right: auto;
     }
 
-
+    .side-container {
+        display: block;
+        position: absolute;
+        right: 740px;
+    }
 
     .slist-demo-thumb {
-        margin-top: 100px;
-        margin-bottom: auto;
+        margin-top: 140px;
+        margin-bottom: 335px;
         width: 349px;
         height: 309px;
     }
@@ -470,7 +484,7 @@ body {
     .slist-book-description {
 
         margin-bottom: 48px;
-        max-width: 500px;
+        max-width: 750px;
 
     }
 
