@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-import axios from 'axios';
+
 
 const slistGalleryEl = document.querySelector('.slist-card-section');
 const background = document.querySelector('.slist-demo-thumb');
