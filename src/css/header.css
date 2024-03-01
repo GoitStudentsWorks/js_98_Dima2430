@@ -21,7 +21,9 @@ body.dark-theme .slist-demo-text {
 body.dark-theme .slist-header-span {
   color: #4f2ee8;
 }
-
+body.dark-theme .slist-card-item {
+  color: #111;
+}
 
 body.light-theme .slist-header-span {
   color: #4f2ee8;
@@ -374,5 +376,7 @@ a {
 }
 
 .inactiveButton {
+
   display: flex;
 }  
+

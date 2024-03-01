@@ -1,24 +1,6 @@
 import axios from 'axios';
 
-// const bookCardBtn = document.querySelector('.book-card-btn');
-// // const chooseButton = document.querySelector('.buttonChoose');
-// // const categoriesSelect = document.getElementById('categories');
-// let selectedCategory = '';
 
-
-// bookCardBtn.addEventListener('click', function() {
-//     selectedCategory = bookCardBtn.dataset.category;
-    
-//     console.log(selectedCategory);
-//     loadBooks(selectedCategory)
-//     .then((result) => {
-//         renderBooks(result, selectedCategory);
-
-//     }).catch((err) => {
-        
-//     });
-
-// });
 const bookCardBtn = document.querySelectorAll('.book-card-btn');
 const booksContainer = document.querySelector('.best-books-gallery');
 // const chooseButton = document.querySelector('.buttonChoose');
@@ -61,58 +43,37 @@ async function loadBooks(category) {
 
 function booksMarkup({_id, book_image, title, author}){
     return `
-    <li class="book-card" data-id="${_id}">
+    <li class="book-card-category" data-id="${_id}">
       <div class="book-thumb">
-        <img class="book-cover" src="${book_image}" alt="${title}"/>
+        <img class="book-cover-cat" src="${book_image}" alt="${title}"/>
+        <div class="view-more view-more-cat">
+        <p class="view-more-text">quick view</p>
+        </div>
         </div>
         <div class="book-descr">
-        <h2 class="book-name">${title}</h2>
+        <h2 class="book-namne-cat">${title}</h2>
         <h3 class="book-author">${author}</h3>
         </div>
       </li>`;
 }
 
-function renderBooks(books, nc){
-    // separatesWordsAddToTitle(nc);
+function renderBooks(books, category){
     const markup = books.map(booksMarkup).join('');
-    const categoriesList = `<ul class="category-books">${markup}</ul>`;
-    const booksCategory = `<h2 class="category-title">${nc}</h2>${categoriesList}`;
-    console.log(markup);
+    const categoriesList = `<ul class="category-books-cat">${markup}</ul>`;
+    const booksCategory = `<h2 class="collection-title">${removeLastWord(category)} <span>${LastWord(category)}</span></h2> ${categoriesList}`;
+    // console.log(markup);
     const booksContainer = document.querySelector('.best-books-gallery');
     booksContainer.innerHTML = booksCategory;
 }
 
-
-// // Додавання назви категорії до заголовку та кольору
-// function separatesWordsAddToTitle(event) {
-    
-//     const categoryBooksTitle = document.querySelector('.');
-//     const currentCategory = event.target.textContent;
-//     const arrrayCurrentCategory = currentCategory.split(' ');
-//     const lastElementBookTitle = arrrayCurrentCategory.pop();
-//     const wordsOfCategoryTitle = arrrayCurrentCategory.join(' ');
+function removeLastWord(category) {
+    let words = category.split(' ');
+    words.pop();
+    let result = words.join(' ');
+    return result;
+  }
   
-//     categoryBooksTitle.textContent = wordsOfCategoryTitle;
-//     const textEl = document.createElement('span');
-//     textEl.classList.add('last_word_category_title');
-//     textEl.textContent = lastElementBookTitle;
-//     categoryBooksTitle.appendChild(textEl);
-  
-    
-//   }
-
-//   // Рендеринг списку книг
-// function renderBooksList(books, event) {
-//     bestsellersContainer.style.display = 'none';
-//     categoryBooksContainer.style.display = 'flex';
-//     separatesWordsAddToTitle(event);
-//     checksBooks(books);
-  
-//     const markup = books.map(book => generateBookMarkup(book)).join('');
-//     categoryBooks.insertAdjacentHTML('beforeend', markup);
-//   }
-
-//   function onButtonClick(event) {
-//     if (event.target.className !== 'category_button') {
-//       return;
-//     }
+  function LastWord(category) {
+      let words = category.trim().split(" "); 
+      return words[words.length - 1];
+  }
