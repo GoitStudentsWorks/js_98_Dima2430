@@ -57,47 +57,23 @@ function booksMarkup({_id, book_image, title, author}){
       </li>`;
 }
 
-function renderBooks(books, nc){
-    // separatesWordsAddToTitle(nc);
+function renderBooks(books, category){
     const markup = books.map(booksMarkup).join('');
     const categoriesList = `<ul class="category-books-cat">${markup}</ul>`;
-    const booksCategory = `<h2 class="category-title">${nc}</h2>${categoriesList}`;
+    const booksCategory = `<h2 class="collection-title">${removeLastWord(category)} <span>${LastWord(category)}</span></h2> ${categoriesList}`;
     // console.log(markup);
     const booksContainer = document.querySelector('.best-books-gallery');
     booksContainer.innerHTML = booksCategory;
 }
 
-
-// // Додавання назви категорії до заголовку та кольору
-// function separatesWordsAddToTitle(event) {
-    
-//     const categoryBooksTitle = document.querySelector('.');
-//     const currentCategory = event.target.textContent;
-//     const arrrayCurrentCategory = currentCategory.split(' ');
-//     const lastElementBookTitle = arrrayCurrentCategory.pop();
-//     const wordsOfCategoryTitle = arrrayCurrentCategory.join(' ');
+function removeLastWord(category) {
+    let words = category.split(' ');
+    words.pop();
+    let result = words.join(' ');
+    return result;
+  }
   
-//     categoryBooksTitle.textContent = wordsOfCategoryTitle;
-//     const textEl = document.createElement('span');
-//     textEl.classList.add('last_word_category_title');
-//     textEl.textContent = lastElementBookTitle;
-//     categoryBooksTitle.appendChild(textEl);
-  
-    
-//   }
-
-//   // Рендеринг списку книг
-// function renderBooksList(books, event) {
-//     bestsellersContainer.style.display = 'none';
-//     categoryBooksContainer.style.display = 'flex';
-//     separatesWordsAddToTitle(event);
-//     checksBooks(books);
-  
-//     const markup = books.map(book => generateBookMarkup(book)).join('');
-//     categoryBooks.insertAdjacentHTML('beforeend', markup);
-//   }
-
-//   function onButtonClick(event) {
-//     if (event.target.className !== 'category_button') {
-//       return;
-//     }
+  function LastWord(category) {
+      let words = category.trim().split(" "); 
+      return words[words.length - 1];
+  }
