@@ -62,3 +62,4 @@ async function renderBooksCategory() {
   bestBooksGallery.innerHTML = booksHomePage;
 }
 renderBooksCategory();
+
