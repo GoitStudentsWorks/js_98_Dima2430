@@ -15,13 +15,13 @@
 
     <!-- mobile version main -->
     <main>
+      <load src="partials/header.html" />
       <section class="slist-section">
         <div>
-          <load src="partials/header.html" />
-          <!-- <div class="side-container">
-            <load src="partials/sidebar.html" />
-          </div> -->
           <div class="slist-tittle-container">
+            <div class="side-container">
+              <load src="partials/sidebar.html" />
+            </div>
             <h2 class="slist-header">
               Shopping <span class="slist-header-span">List</span>
             </h2>
@@ -34,7 +34,7 @@
                 This page is empty, add some books and proceed to order.
               </p>
               <div class="slist-demopicture-thumb">
-                <img src="../img/books.png" alt="books" />
+                <img src="./img/boox.png" alt="books" />
               </div>
             </div>
 
@@ -45,7 +45,6 @@
       </section>
       <script type="module" src="./js/shoppingList.js"></script>
       <script type="module" src="./js/header.js"></script>
-      <script type="module" src="./js/local-storage.js"></script>
     </main>
   </body>
 </html>
